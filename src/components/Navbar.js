@@ -4,9 +4,11 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 const NavItem = ({ name, url }) => (
-    <Text color="gray.200" fontWeight="500">
-        {name}
-    </Text>
+    <a href={url}>
+        <Text color="gray.200" fontWeight="500">
+            {name}
+        </Text>
+    </a>
 )
 
 const Navbar = () => {
@@ -42,7 +44,7 @@ const Navbar = () => {
                 width="100%"
                 justifyContent="space-evenly"
             >
-                <NavItem name="Home" />
+                <NavItem name="Home" url="/" />
                 <NavItem name="About" />
                 <NavItem name="Contact" />
             </Box>

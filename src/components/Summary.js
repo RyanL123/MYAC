@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Text, Button } from "@chakra-ui/core"
 import Title from "./Title"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
 const Summary = () => {
@@ -51,14 +51,16 @@ const Summary = () => {
                     deserunt mollit anim id est laborum
                 </Text>
                 <Box mt="20px">
-                    <Button
-                        variantColor="blue"
-                        variant="link"
-                        rightIcon="arrow-forward"
-                        fontSize="18px"
-                    >
-                        Our Constitution
-                    </Button>
+                    <Link to="/constitution">
+                        <Button
+                            variantColor="blue"
+                            variant="link"
+                            rightIcon="arrow-forward"
+                            fontSize="18px"
+                        >
+                            Our Constitution
+                        </Button>
+                    </Link>
                 </Box>
             </Box>
             <Box
