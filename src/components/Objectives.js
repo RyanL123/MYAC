@@ -14,7 +14,7 @@ const Card = ({ title, content, icon }) => (
         <Box width="40px" height="40px">
             {icon}
         </Box>
-        <Heading color="white" size="lg" lineHeight="1em" mt="10px">
+        <Heading color="white" size="lg" lineHeight="1em" mt="20px">
             {title}
         </Heading>
         <Text color="gray.400" fontSize="md" mt="14px">
@@ -24,7 +24,7 @@ const Card = ({ title, content, icon }) => (
 )
 
 export default () => (
-    <Box px="10vw">
+    <Box px="10vw" py="100px">
         <Title
             title="Lorem ipsum dolor"
             subtitle="Lorem ipsum dolor sit amet"
