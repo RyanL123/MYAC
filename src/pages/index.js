@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar"
 
 export default function Home() {
     return (
-        <Box>
+        <Box backgroundColor="gray.800">
             <Navbar />
         </Box>
     )
