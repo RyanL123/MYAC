@@ -25,6 +25,7 @@ const Hero = () => {
                     display: "flex",
                     alignItems: "center",
                 }}
+                alt="Group Photo"
             >
                 <Box maxWidth="1200px">
                     <Heading color="white">
