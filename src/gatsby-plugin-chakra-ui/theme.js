@@ -1,9 +1,9 @@
-import { theme } from "@chakra-ui/core"
+import { theme as defaultTheme } from "@chakra-ui/core"
 
 const theme = {
-    ...theme,
+    ...defaultTheme,
     colors: {
-        ...theme.colors,
+        ...defaultTheme.colors,
         blue: {
             50: "#e1f3ff",
             100: "#b8d7fa",
