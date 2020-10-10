@@ -29,6 +29,8 @@ export default () => (
             title="Lorem ipsum dolor"
             subtitle="Lorem ipsum dolor sit amet"
             align="center"
+            subColor="blue.300"
+            color="white"
         />
         <Box
             mt="50px"
@@ -44,7 +46,7 @@ export default () => (
                     <svg
                         className="w-6 h-6"
                         fill="none"
-                        stroke="#8cbcf2"
+                        stroke="#60a1ec"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -64,7 +66,7 @@ export default () => (
                     <svg
                         className="w-6 h-6"
                         fill="none"
-                        stroke="#8cbcf2"
+                        stroke="#60a1ec"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -84,7 +86,7 @@ export default () => (
                     <svg
                         className="w-6 h-6"
                         fill="none"
-                        stroke="#8cbcf2"
+                        stroke="#60a1ec"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >

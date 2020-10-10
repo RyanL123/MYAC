@@ -32,7 +32,7 @@ const Navbar = () => {
             px="10vw"
             alignItems="center"
             justifyContent="space-between"
-            backgroundColor="gray.700"
+            backgroundColor="gray.800"
         >
             <Box>
                 <Img fixed={logo.childImageSharp.fixed} />
