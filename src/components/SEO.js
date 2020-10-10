@@ -23,6 +23,6 @@ export default () => (
             property="twitter:description"
             content="The Mississauga Youth Action Committee works to voice the opinions of the 145,000 youth in Mississauga and better engage youth in their community."
         />
-        <meta property="twitter:image" content="/logo.jpg" />
+        <meta property="twitter:image" content="/logo.png" />
     </Helmet>
 )
