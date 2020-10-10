@@ -15,7 +15,7 @@ export default () => (
             content="The Mississauga Youth Action Committee works to voice the opinions of the 145,000 youth in Mississauga and better engage youth in their community."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/logo.jpg" />
+        <meta property="og:image" content="/logo.png" />
         {/* Twitter  */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="MYAC" />
