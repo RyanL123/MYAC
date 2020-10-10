@@ -1,6 +1,6 @@
 import React from "react"
 import { Box } from "@chakra-ui/core"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
 const Footer = () => {
@@ -38,7 +38,9 @@ const Footer = () => {
     `)
     return (
         <Box backgroundColor="gray.900" px="10vw" py="100px" textAlign="center">
-            <Img fixed={logo.childImageSharp.fixed} />
+            <Link to="/">
+                <Img fixed={logo.childImageSharp.fixed} />
+            </Link>
             <Box
                 display="flex"
                 flexDirection="row"
