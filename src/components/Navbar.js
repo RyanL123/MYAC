@@ -33,6 +33,7 @@ const Navbar = () => {
             alignItems="center"
             justifyContent="space-between"
             backgroundColor="gray.800"
+            borderBottom="1px solid hsla(0,0%,100%,0.2)"
         >
             <Box>
                 <Img fixed={logo.childImageSharp.fixed} />
@@ -45,7 +46,7 @@ const Navbar = () => {
                 justifyContent="space-evenly"
             >
                 <NavItem name="Home" url="/" />
-                <NavItem name="About" />
+                <NavItem name="About" url="/about" />
                 <NavItem name="Contact" />
             </Box>
         </Box>
