@@ -1,9 +1,9 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-export default () => (
+export default ({ title }) => (
     <Helmet>
-        <title>MYAC</title>
+        <title>{title}</title>
         <meta
             name="description"
             content="The Mississauga Youth Action Committee works to voice the opinions of the 145,000 youth in Mississauga and better engage youth in their community."

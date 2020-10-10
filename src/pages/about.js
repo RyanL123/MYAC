@@ -55,7 +55,7 @@ const About = () => {
     ]
     return (
         <Box backgroundColor="gray.800">
-            <SEO />
+            <SEO title="MYAC | About" />
             <Navbar />
             <Box px="10vw" py="100px">
                 <Box display="flex" flexDirection="column" alignItems="center">

@@ -12,7 +12,7 @@ import Footer from "../components/Footer"
 export default function Home() {
     return (
         <Box backgroundColor="gray.800" overflow="hidden">
-            <SEO />
+            <SEO title="MYAC | Home" />
             <Navbar />
             <Hero />
             <Objectives />
