@@ -1,14 +1,14 @@
 import React from "react"
 import { Box, Text } from "@chakra-ui/core"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
 const NavItem = ({ name, url }) => (
-    <a href={url}>
+    <Link to={url}>
         <Text color="gray.200" fontWeight="500">
             {name}
         </Text>
-    </a>
+    </Link>
 )
 
 const Navbar = () => {

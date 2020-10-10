@@ -7,6 +7,7 @@ import Hero from "../components/Hero"
 import Objectives from "../components/Objectives"
 import Summary from "../components/Summary"
 import Connects from "../components/Connects"
+import Footer from "../components/Footer"
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
                 c3="linear-gradient(90deg, rgba(28,35,48,1) 0%, rgba(48,58,78,1) 35%, rgba(28,35,48,1) 100%)"
             />
             <Connects />
+            <Footer />
         </Box>
     )
 }
