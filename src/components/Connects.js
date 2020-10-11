@@ -1,21 +1,9 @@
 import React from "react"
 import { Box, Text } from "@chakra-ui/core"
 import Title from "./Title"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import connects from "../assets/connects.svg"
 
 const Connects = () => {
-    const { connect } = useStaticQuery(graphql`
-        query {
-            connect: file(relativePath: { eq: "connect.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2000, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-        }
-    `)
     return (
         <Box
             px="10vw"
@@ -35,9 +23,8 @@ const Connects = () => {
                 mt={["50px", "50px", "50px", null]}
                 borderRadius="20px"
                 overflow="hidden"
-                boxShadow="2xl"
             >
-                <Img fluid={connect.childImageSharp.fluid} />
+                <img src={connects} />
             </Box>
             <Box
                 width={["100%", "100%", "700px", "900px"]}

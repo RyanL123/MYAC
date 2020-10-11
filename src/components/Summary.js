@@ -1,21 +1,10 @@
 import React from "react"
 import { Box, Text, Button } from "@chakra-ui/core"
 import Title from "./Title"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
+import summary from "../assets/summary.svg"
 
 const Summary = () => {
-    const { summary } = useStaticQuery(graphql`
-        query {
-            summary: file(relativePath: { eq: "summary.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 2000, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-        }
-    `)
     return (
         <Box
             px="10vw"
@@ -66,9 +55,8 @@ const Summary = () => {
                 mt={["50px", "50px", "50px", null]}
                 borderRadius="20px"
                 overflow="hidden"
-                boxShadow="2xl"
             >
-                <Img fluid={summary.childImageSharp.fluid} />
+                <img src={summary} />
             </Box>
         </Box>
     )
