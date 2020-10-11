@@ -159,8 +159,8 @@ const About = () => {
                         "repeat(auto-fit, minmax(200px, 1fr))",
                     ]}
                     gridAutoFlow="row"
-                    gridColumnGap={5}
-                    gridRowGap={5}
+                    gridColumnGap={10}
+                    gridRowGap={10}
                     mt="100px"
                 >
                     {people.map(person => (
