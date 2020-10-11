@@ -7,7 +7,16 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
 const About = () => {
-    const { avatar } = useStaticQuery(graphql`
+    const {
+        alyssa,
+        ben,
+        claire,
+        daniel,
+        hannah,
+        nidhi,
+        shirley,
+        avatar,
+    } = useStaticQuery(graphql`
         query {
             avatar: file(relativePath: { eq: "avatar.png" }) {
                 childImageSharp {
@@ -16,40 +25,94 @@ const About = () => {
                     }
                 }
             }
+            alyssa: file(relativePath: { eq: "alyssa.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 200, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            ben: file(relativePath: { eq: "ben.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 200, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            claire: file(relativePath: { eq: "claire.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 200, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            daniel: file(relativePath: { eq: "daniel.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 200, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            hannah: file(relativePath: { eq: "hannah.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 200, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            nidhi: file(relativePath: { eq: "nidhi.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 200, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            shirley: file(relativePath: { eq: "shirley.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 200, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
         }
     `)
-    const [name, setName] = useState("P1")
+    const [name, setName] = useState("Alyssa Guo")
     const [desc, setDesc] = useState("p1")
-    const [img, setImg] = useState(avatar)
+    const [img, setImg] = useState(alyssa)
     const people = [
         {
-            name: "P1",
-            img: avatar,
+            name: "Alyssa Guo",
+            img: alyssa,
             desc: "p1",
         },
         {
-            name: "P2",
-            img: avatar,
+            name: "Benjamin Zhang",
+            img: ben,
             desc: "p2",
         },
         {
-            name: "P3",
-            img: avatar,
+            name: "Claire Shen",
+            img: claire,
             desc: "p3",
         },
         {
-            name: "P4",
-            img: avatar,
+            name: "Daniel Ojeda",
+            img: daniel,
             desc: "p4",
         },
         {
-            name: "P5",
-            img: avatar,
+            name: "Hannah Mahr",
+            img: hannah,
             desc: "p5",
         },
         {
-            name: "P6",
-            img: avatar,
+            name: "Nidhi Vasani",
+            img: nidhi,
+            desc: "p6",
+        },
+        {
+            name: "Shirley Mu",
+            img: shirley,
             desc: "p6",
         },
     ]
@@ -59,8 +122,19 @@ const About = () => {
             <Navbar />
             <Box px="10vw" py="100px">
                 <Box display="flex" flexDirection="column" alignItems="center">
-                    <Box width="200px">
-                        <Img fluid={img.childImageSharp.fluid} />
+                    <Box
+                        width="200px"
+                        height="200px"
+                        borderRadius="50%"
+                        overflow="hidden"
+                    >
+                        <Img
+                            fluid={img.childImageSharp.fluid}
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                            }}
+                        />
                     </Box>
                     <Heading color="white" mt="25px">
                         {name}
@@ -80,7 +154,7 @@ const About = () => {
                     display="grid"
                     gridTemplateColumns={[
                         "repeat(auto-fit, minmax(100px, 1fr))",
-                        "repeat(auto-fit, minmax(100px, 1fr))",
+                        "repeat(auto-fit, minmax(150px, 1fr))",
                         "repeat(auto-fit, minmax(200px, 1fr))",
                         "repeat(auto-fit, minmax(200px, 1fr))",
                     ]}
@@ -103,6 +177,14 @@ const About = () => {
                             >
                                 <Box
                                     width={["100px", "100px", "200px", "200px"]}
+                                    height={[
+                                        "100px",
+                                        "100px",
+                                        "200px",
+                                        "200px",
+                                    ]}
+                                    borderRadius="50%"
+                                    overflow="hidden"
                                 >
                                     <button
                                         onClick={() => {
@@ -113,18 +195,23 @@ const About = () => {
                                         style={{
                                             outline: "none",
                                             width: "100%",
+                                            height: "100%",
                                         }}
                                     >
                                         <Img
                                             fluid={
                                                 person.img.childImageSharp.fluid
                                             }
+                                            style={{
+                                                width: "100%",
+                                                height: "100%",
+                                            }}
                                         />
                                     </button>
                                 </Box>
                                 <Heading
                                     color="white"
-                                    size="xl"
+                                    size="lg"
                                     textAlign="center"
                                     width="200px"
                                     mt="20px"
