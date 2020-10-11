@@ -25,7 +25,7 @@ const Connects = () => {
                 borderRadius="20px"
                 overflow="hidden"
             >
-                <img src={connects} />
+                <img src={connects} alt="connects" />
             </Box>
             <Box
                 width={["100%", "100%", "700px", "900px"]}

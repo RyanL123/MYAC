@@ -56,7 +56,7 @@ const Summary = () => {
                 borderRadius="20px"
                 overflow="hidden"
             >
-                <img src={summary} />
+                <img src={summary} alt="team" />
             </Box>
         </Box>
     )
