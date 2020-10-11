@@ -47,7 +47,7 @@ const Navbar = () => {
             >
                 <NavItem name="Home" url="/" />
                 <NavItem name="About" url="/about" />
-                <NavItem name="Contact" />
+                <NavItem name="Events" url="/events" />
             </Box>
         </Box>
     )
