@@ -1,5 +1,6 @@
 import React from "react"
-import { Box, Text } from "@chakra-ui/core"
+import { Box, Text, Button } from "@chakra-ui/core"
+import { Link } from "gatsby"
 import Title from "./Title"
 import connects from "../assets/connects.svg"
 
@@ -42,6 +43,18 @@ const Connects = () => {
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                 </Text>
+                <Box mt="20px">
+                    <Link to="/events">
+                        <Button
+                            variantColor="blue"
+                            variant="link"
+                            rightIcon="arrow-forward"
+                            fontSize="18px"
+                        >
+                            Events
+                        </Button>
+                    </Link>
+                </Box>
             </Box>
         </Box>
     )
