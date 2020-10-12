@@ -96,7 +96,13 @@ const Event = ({ title, desc, status, img, link, date }) => (
         }
         flexDirection="column"
     >
-        <Image src={img} height="auto" width="100%" borderRadius="md" />
+        <Image
+            src={img}
+            height="auto"
+            width="100%"
+            borderRadius="md"
+            alt={title}
+        />
         <Box mt="20px">
             <Heading color="white">{title}</Heading>
             <Box

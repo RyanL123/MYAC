@@ -126,6 +126,7 @@ const About = () => {
                                 width: "100%",
                                 height: "100%",
                             }}
+                            alt={name}
                         />
                     </Box>
                     <Heading color="white" mt="25px">
@@ -198,6 +199,7 @@ const About = () => {
                                                 width: "100%",
                                                 height: "100%",
                                             }}
+                                            alt={person.name}
                                         />
                                     </button>
                                 </Box>
