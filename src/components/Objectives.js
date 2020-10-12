@@ -26,8 +26,8 @@ const Card = ({ title, content, icon }) => (
 export default () => (
     <Box px="10vw" py="100px">
         <Title
-            title="Lorem ipsum dolor"
-            subtitle="Lorem ipsum dolor sit amet"
+            title="Our Objectives"
+            subtitle="By the youth, for the youth"
             align="center"
             subColor="blue.300"
             color="white"
@@ -40,8 +40,8 @@ export default () => (
             alignItems="center"
         >
             <Card
-                title="Lorem ipsum dolor sit amet"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Consult all youth"
+                content="MYAC actively consults youth and youth groups across the city to collectively determine the voice and vision of youth across Mississauga."
                 icon={
                     <svg
                         className="w-6 h-6"
@@ -60,8 +60,8 @@ export default () => (
                 }
             />
             <Card
-                title="Lorem ipsum dolor sit amet"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Resources and Development"
+                content="MYAC provides resources and professional development to youth in Mississauga who are engaged in student leadership opportunities through the Youth Advisory Commitees, Teen Advisory Groups, and other youth groups."
                 icon={
                     <svg
                         className="w-6 h-6"
@@ -80,8 +80,10 @@ export default () => (
                 }
             />
             <Card
-                title="Lorem ipsum dolor sit amet"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Volunteer Opportunities"
+                content="	
+                Volunteer Opportunities
+                MYAC provides volunteer opportunities to youth, and encourages volunteerism and student leadership within Mississauga."
                 icon={
                     <svg
                         className="w-6 h-6"

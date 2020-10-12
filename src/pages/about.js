@@ -15,16 +15,8 @@ const About = () => {
         hannah,
         nidhi,
         shirley,
-        avatar,
     } = useStaticQuery(graphql`
         query {
-            avatar: file(relativePath: { eq: "avatar.png" }) {
-                childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
             alyssa: file(relativePath: { eq: "alyssa.jpg" }) {
                 childImageSharp {
                     fluid(maxHeight: 200, quality: 100) {
@@ -77,43 +69,43 @@ const About = () => {
         }
     `)
     const [name, setName] = useState("Alyssa Guo")
-    const [desc, setDesc] = useState("p1")
+    const [desc, setDesc] = useState("Alyssa's Bio")
     const [img, setImg] = useState(alyssa)
     const people = [
         {
             name: "Alyssa Guo",
             img: alyssa,
-            desc: "p1",
+            desc: "Alyssa's Bio",
         },
         {
             name: "Benjamin Zhang",
             img: ben,
-            desc: "p2",
+            desc: "Benjamin's Bio",
         },
         {
             name: "Claire Shen",
             img: claire,
-            desc: "p3",
+            desc: "Claire's Bio",
         },
         {
             name: "Daniel Ojeda",
             img: daniel,
-            desc: "p4",
+            desc: "Daniel's Bio",
         },
         {
             name: "Hannah Mahr",
             img: hannah,
-            desc: "p5",
+            desc: "Hannah's Bio",
         },
         {
             name: "Nidhi Vasani",
             img: nidhi,
-            desc: "p6",
+            desc: "Nidhi's Bio",
         },
         {
             name: "Shirley Mu",
             img: shirley,
-            desc: "p6",
+            desc: "Shirley's Bio",
         },
     ]
     return (

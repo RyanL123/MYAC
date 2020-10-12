@@ -33,15 +33,16 @@ const Connects = () => {
             >
                 <Title
                     title="MYAC Connects"
-                    subtitle="Lorem ipsum dolor sit amet"
+                    subtitle="Always Up To Something"
                     align="left"
                     subColor="blue.300"
                     color="white"
                 />
                 <Text color="gray.400" fontSize="xl" fontWeight="400" mt="30px">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    MYAC Connects are a great way to meet new people and get
+                    involved in your community. Come out on the second wednesday
+                    of every month to meet new, network, and find new
+                    opportunities.
                 </Text>
                 <Box mt="20px">
                     <Link to="/events">
@@ -51,7 +52,7 @@ const Connects = () => {
                             rightIcon="arrow-forward"
                             fontSize="18px"
                         >
-                            Events
+                            View Our Events
                         </Button>
                     </Link>
                 </Box>

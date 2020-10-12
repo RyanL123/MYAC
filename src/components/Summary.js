@@ -20,8 +20,8 @@ const Summary = () => {
                 pr={["0", "0", "0", "75px"]}
             >
                 <Title
-                    title="Lorem ipsum dolor"
-                    subtitle="Lorem ipsum dolor sit amet"
+                    title="Empowering Youth"
+                    subtitle="We are the Mississauga Youth Action Committee"
                     align="left"
                     subColor="blue.400"
                     color="black.800"
@@ -32,20 +32,20 @@ const Summary = () => {
                     fontSize="xl"
                     lineHeight="1.65em"
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nos trud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    They strive to represent the 145,000 youth in the city of
+                    Mississauga and works to voice their opinions and better
+                    engage youth in their community. MYAC promotes the
+                    well-being of youth (aged 14-24) in the city of Mississauga.
                 </Text>
                 <Box mt="20px">
-                    <Link to="/constitution">
+                    <Link to="/about">
                         <Button
                             variantColor="blue"
                             variant="link"
                             rightIcon="arrow-forward"
                             fontSize="18px"
                         >
-                            Our Constitution
+                            Meet The Team
                         </Button>
                     </Link>
                 </Box>

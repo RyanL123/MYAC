@@ -28,10 +28,12 @@ const Hero = () => {
                 alt="Group Photo"
             >
                 <Box maxWidth="1200px">
-                    <Heading color="white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
+                    <Heading color="white" size="2xl">
+                        Mississauga Youth Action Committee
+                    </Heading>
+                    <Heading color="white" mt="50px" size="lg">
+                        We represent the youth of Mississauga. We help, engage,
+                        and empower.
                     </Heading>
                 </Box>
             </BackgroundImage>

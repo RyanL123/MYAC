@@ -76,8 +76,10 @@ const parseDate = date => {
         case "11":
             month = "Nov"
             break
-        case "11":
+        case "12":
             month = "Dec"
+            break
+        default:
             break
     }
     return year + " " + month + " " + day
