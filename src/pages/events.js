@@ -103,32 +103,49 @@ const Event = ({ title, desc, status, img, link, date }) => (
             borderRadius="md"
             alt={title}
         />
-        <Box mt="20px">
-            <Heading color="white">{title}</Heading>
-            <Box
-                display="flex"
-                flexDirection="row"
-                alignItems="center"
-                mt="10px"
-            >
-                {getBadge(status)}
-                <Text color="gray.100" fontSize="md" fontWeight="500" ml="10px">
-                    {parseDate(date)}
+        <Box
+            mt="20px"
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
+            height="100%"
+        >
+            <Box>
+                <Heading color="white" size="lg">
+                    {title}
+                </Heading>
+                <Box
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    mt="10px"
+                >
+                    {getBadge(status)}
+                    <Text
+                        color="gray.100"
+                        fontSize="md"
+                        fontWeight="500"
+                        ml="10px"
+                    >
+                        {parseDate(date)}
+                    </Text>
+                </Box>
+                <Text color="gray.300" fontSize="lg" fontWeight="500" mt="10px">
+                    {desc}
                 </Text>
             </Box>
-            <Text color="gray.300" fontSize="lg" fontWeight="500" mt="10px">
-                {desc}
-            </Text>
-            <Button
-                variant="link"
-                variantColor="blue"
-                rightIcon="external-link"
-                mt="10px"
-            >
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                    Learn More
-                </a>
-            </Button>
+            <Box>
+                <Button
+                    variant="link"
+                    variantColor="blue"
+                    rightIcon="external-link"
+                    mt="10px"
+                >
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                        Learn More
+                    </a>
+                </Button>
+            </Box>
         </Box>
     </Box>
 )
@@ -142,7 +159,7 @@ const Placeholder = () => (
         display="flex"
         flexDirection="column"
     >
-        <Skeleton height="100px" width="100%" />
+        <Skeleton height="200px" width="100%" />
         <Box mt="20px">
             <Skeleton height="28px" />
             <Skeleton height="20px" />
@@ -193,8 +210,8 @@ const Events = () => {
                     gridTemplateColumns={[
                         "repeat(auto-fit, minmax(200px, 1fr))",
                         "repeat(auto-fit, minmax(300px, 1fr))",
-                        "repeat(auto-fit, minmax(500px, 1fr))",
-                        "repeat(auto-fit, minmax(500px, 1fr))",
+                        "repeat(auto-fit, minmax(300px, 1fr))",
+                        "repeat(auto-fit, minmax(300px, 1fr))",
                     ]}
                     gridAutoFlow="row"
                     gridColumnGap={5}

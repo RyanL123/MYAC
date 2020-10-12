@@ -8,7 +8,7 @@ const Connects = () => {
     return (
         <Box
             px="10vw"
-            py="100px"
+            py="150px"
             display="flex"
             flexDirection={[
                 "column-reverse",

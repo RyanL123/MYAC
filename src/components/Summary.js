@@ -8,7 +8,7 @@ const Summary = () => {
     return (
         <Box
             px="10vw"
-            py="100px"
+            py="150px"
             backgroundColor="gray.50"
             display="flex"
             flexDirection={["column", "column", "column", "row"]}

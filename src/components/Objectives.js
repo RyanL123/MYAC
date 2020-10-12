@@ -24,7 +24,7 @@ const Card = ({ title, content, icon }) => (
 )
 
 export default () => (
-    <Box px="10vw" py="100px">
+    <Box px="10vw" py="150px">
         <Title
             title="Our Objectives"
             subtitle="By the youth, for the youth"
@@ -37,7 +37,7 @@ export default () => (
             display="flex"
             flexDirection={["column", "column", "column", "row"]}
             justifyContent="space-between"
-            alignItems="center"
+            alignItems="flex-start"
         >
             <Card
                 title="Consult all youth"
