@@ -8,7 +8,7 @@
   MYAC Website
 </h1>
 
-Website for the Mississauga Youth Action Committee. For more information visit themyac.ca
+Website for the Mississauga Youth Action Committee. For more information visit [https://themyac.netlify.app/](https://themyac.netlify.app/)
 
 ## Getting started
 
@@ -41,5 +41,7 @@ npm run start
 GatsbyJS
 
 Netlify
+
+Airtable
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/33fb4c70-f630-4ffc-953a-d1dd02ddeba1/deploy-status)](https://app.netlify.com/sites/vigilant-einstein-3a82f6/deploys)
