@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Box, Heading, PseudoBox, Text } from "@chakra-ui/core"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
@@ -19,7 +19,7 @@ const About = () => {
         query {
             alyssa: file(relativePath: { eq: "alyssa.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
+                    fluid(maxHeight: 500, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
@@ -61,51 +61,48 @@ const About = () => {
             }
             shirley: file(relativePath: { eq: "shirley.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
+                    fluid(maxHeight: 500, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
         }
     `)
-    const [name, setName] = useState("Alyssa Guo")
-    const [desc, setDesc] = useState("Alyssa's Bio")
-    const [img, setImg] = useState(alyssa)
     const people = [
         {
             name: "Alyssa Guo",
             img: alyssa,
-            desc: "Alyssa's Bio",
+            route: "alyssa",
         },
         {
             name: "Benjamin Zhang",
             img: ben,
-            desc: "Benjamin's Bio",
+            route: "benjamin",
         },
         {
             name: "Claire Shen",
             img: claire,
-            desc: "Claire's Bio",
+            route: "claire",
         },
         {
             name: "Daniel Ojeda",
             img: daniel,
-            desc: "Daniel's Bio",
+            route: "daniel",
         },
         {
             name: "Hannah Mahr",
             img: hannah,
-            desc: "Hannah's Bio",
+            route: "hannah",
         },
         {
             name: "Nidhi Vasani",
             img: nidhi,
-            desc: "Nidhi's Bio",
+            route: "nidhi",
         },
         {
             name: "Shirley Mu",
             img: shirley,
-            desc: "Shirley's Bio",
+            route: "shirley",
         },
     ]
     return (
@@ -113,36 +110,6 @@ const About = () => {
             <SEO title="MYAC | About" />
             <Navbar />
             <Box px="10vw" py="100px">
-                <Box display="flex" flexDirection="column" alignItems="center">
-                    <Box
-                        width="200px"
-                        height="200px"
-                        borderRadius="50%"
-                        overflow="hidden"
-                    >
-                        <Img
-                            fluid={img.childImageSharp.fluid}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                            alt={name}
-                        />
-                    </Box>
-                    <Heading color="white" mt="25px">
-                        {name}
-                    </Heading>
-                    <Text
-                        color="gray.500"
-                        fontSize="xl"
-                        fontWeight="500"
-                        mt="25px"
-                        maxWidth="800px"
-                        textAlign="justify"
-                    >
-                        {desc}
-                    </Text>
-                </Box>
                 <Box
                     display="grid"
                     gridTemplateColumns={[
@@ -168,41 +135,44 @@ const About = () => {
                                     opacity: "0.8",
                                 }}
                             >
-                                <Box
-                                    width={["100px", "100px", "200px", "200px"]}
-                                    height={[
-                                        "100px",
-                                        "100px",
-                                        "200px",
-                                        "200px",
-                                    ]}
-                                    borderRadius="50%"
-                                    overflow="hidden"
-                                >
-                                    <button
-                                        onClick={() => {
-                                            setDesc(person.desc)
-                                            setName(person.name)
-                                            setImg(person.img)
-                                        }}
-                                        style={{
-                                            outline: "none",
-                                            width: "100%",
-                                            height: "100%",
-                                        }}
+                                <Link to={person.route}>
+                                    <Box
+                                        width={[
+                                            "100px",
+                                            "100px",
+                                            "200px",
+                                            "200px",
+                                        ]}
+                                        height={[
+                                            "100px",
+                                            "100px",
+                                            "200px",
+                                            "200px",
+                                        ]}
+                                        borderRadius="50%"
+                                        overflow="hidden"
                                     >
-                                        <Img
-                                            fluid={
-                                                person.img.childImageSharp.fluid
-                                            }
+                                        <button
                                             style={{
+                                                outline: "none",
                                                 width: "100%",
                                                 height: "100%",
                                             }}
-                                            alt={person.name}
-                                        />
-                                    </button>
-                                </Box>
+                                        >
+                                            <Img
+                                                fluid={
+                                                    person.img.childImageSharp
+                                                        .fluid
+                                                }
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%",
+                                                }}
+                                                alt={person.name}
+                                            />
+                                        </button>
+                                    </Box>
+                                </Link>
                                 <Heading
                                     color="white"
                                     size="lg"
