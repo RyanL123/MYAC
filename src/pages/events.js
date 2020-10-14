@@ -187,10 +187,17 @@ const Events = () => {
                                 : null
                         }
                         link={event.fields.URL}
-                        date={event.fields.Date}
+                        date={
+                            event.fields.Date == undefined
+                                ? "00-00-00"
+                                : event.fields.Date
+                        }
                     />
                 ),
-                date: event.fields.Date,
+                date:
+                    event.fields.Date == undefined
+                        ? "00-00-00"
+                        : event.fields.Date,
             }))
             // Sort lexicographically based on date
             events.sort((a, b) => b.date.localeCompare(a.date))
