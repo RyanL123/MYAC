@@ -25,7 +25,7 @@ const Alyssa = () => {
             <About
                 img={avatar}
                 name="Alyssa Guo"
-                position="Director of Public Relations"
+                position="Director of External Communication"
                 bio="Alyssa Guo is the current Director of Public Relations of MYAC. Outside of MYAC, she is a volunteer with Trillium Health Partners and Fridays for Future Toronto. Her involvement in the local community has led her to understand the need and develop a passion for advocacy, which she hopes to pursue through her role at MYAC. As part of her school’s student council for the past 3 years, Alyssa continues to foster her interpersonal skills that will aid her in her role at MYAC. She is excited to meet more of the wonderful youth of Mississauga at future connects and MYAC events. Alyssa has a strong interest in medicine, computer science, and the sciences. Fun fact: she loves to dance and is a dance teacher!"
                 email="alyssa.guo@themyac.ca"
             />
