@@ -27,6 +27,7 @@ const Daniel = () => {
                 name="Daniel Ojeda"
                 position="Vice-Chair of Board"
                 bio="Daniel Ojeda currently serves as the Vice-Chair of Board for MYAC. Prior to his involvement within the organization, he worked as an advisor to the Minister of Education (2016), and also served as student senate representative for his school to the Dufferin-Peel CDSB (2020). Within his former advisory roles, Daniel understood the unique challenges thousands of fellow youth in Ontario youth face, the process that is needed to fix them; and advocated on their behalves. As a member of the Canadian Army reserve, Daniel also continues to foster leadership skills that can, and are implemented in his role as Vice-Chair. Daniel is very interested in the sciences, medicine, political discourse, and hockey. Fun fact: Daniel co-piloted an airplane for the first time at 12 years old."
+                email="daniel.ojeda@themyac.ca"
             />
             <Footer />
         </Box>

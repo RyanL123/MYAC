@@ -121,7 +121,6 @@ const About = () => {
                     gridAutoFlow="row"
                     gridColumnGap={10}
                     gridRowGap={10}
-                    mt="100px"
                 >
                     {people.map(person => (
                         <Box>
