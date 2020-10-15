@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Box, Heading, PseudoBox, Text } from "@chakra-ui/core"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
+import Title from "../components/Title"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -19,49 +20,49 @@ const About = () => {
         query {
             alyssa: file(relativePath: { eq: "alyssa.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 500, quality: 100) {
+                    fluid(maxHeight: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
             ben: file(relativePath: { eq: "ben.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
+                    fluid(maxHeight: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
             claire: file(relativePath: { eq: "claire.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
+                    fluid(maxHeight: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
             daniel: file(relativePath: { eq: "daniel.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
+                    fluid(maxHeight: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
             hannah: file(relativePath: { eq: "hannah.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
+                    fluid(maxHeight: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
             nidhi: file(relativePath: { eq: "nidhi.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 200, quality: 100) {
+                    fluid(maxHeight: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
             shirley: file(relativePath: { eq: "shirley.jpg" }) {
                 childImageSharp {
-                    fluid(maxHeight: 500, quality: 100) {
+                    fluid(maxHeight: 700, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
@@ -71,36 +72,43 @@ const About = () => {
     const people = [
         {
             name: "Alyssa Guo",
+            position: "Director of External Communication",
             img: alyssa,
             route: "alyssa",
         },
         {
             name: "Benjamin Zhang",
+            position: "Director of Administrations",
             img: ben,
             route: "benjamin",
         },
         {
             name: "Claire Shen",
+            position: "Director of Membership Affairs",
             img: claire,
             route: "claire",
         },
         {
             name: "Daniel Ojeda",
+            position: "Vice Chairperson",
             img: daniel,
             route: "daniel",
         },
         {
             name: "Hannah Mahr",
+            position: "Director of Finance",
             img: hannah,
             route: "hannah",
         },
         {
             name: "Nidhi Vasani",
+            position: "Director of Promotions",
             img: nidhi,
             route: "nidhi",
         },
         {
             name: "Shirley Mu",
+            position: "Chairperson",
             img: shirley,
             route: "shirley",
         },
@@ -110,79 +118,83 @@ const About = () => {
             <SEO title="MYAC | About" />
             <Navbar />
             <Box px="10vw" py="100px">
+                <Title
+                    title="MYAC Board Of Directors"
+                    subtitle="The people who make it happen"
+                    align="left"
+                    subColor="blue.300"
+                    color="white"
+                />
                 <Box
                     display="grid"
                     gridTemplateColumns={[
-                        "repeat(auto-fit, minmax(100px, 1fr))",
-                        "repeat(auto-fit, minmax(150px, 1fr))",
-                        "repeat(auto-fit, minmax(200px, 1fr))",
-                        "repeat(auto-fit, minmax(200px, 1fr))",
+                        "repeat(auto-fit, minmax(200px, 80vw))",
+                        "repeat(auto-fit, minmax(200px, 80vw))",
+                        "repeat(auto-fit, minmax(400px, 1fr))",
+                        "repeat(auto-fit, minmax(400px, 1fr))",
                     ]}
                     gridAutoFlow="row"
-                    gridColumnGap={10}
+                    gridColumnGap={5}
                     gridRowGap={10}
+                    mt="100px"
                 >
                     {people.map(person => (
-                        <Box>
-                            <PseudoBox
-                                display="flex"
-                                flexDirection="column"
-                                alignItems="center"
-                                transition="transform 0.5s, opacity 0.5s"
-                                _hover={{
-                                    transform: "scale(1.025)",
-                                    opacity: "0.8",
-                                }}
-                            >
-                                <Link to={person.route}>
-                                    <Box
-                                        width={[
-                                            "100px",
-                                            "100px",
-                                            "200px",
-                                            "200px",
-                                        ]}
-                                        height={[
-                                            "100px",
-                                            "100px",
-                                            "200px",
-                                            "200px",
-                                        ]}
-                                        borderRadius="50%"
-                                        overflow="hidden"
+                        <PseudoBox
+                            display="flex"
+                            flexDirection="column"
+                            justifySelf="center"
+                            alignItems="center"
+                            transition="transform 0.5s, opacity 0.5s"
+                            width="100%"
+                            _hover={{
+                                opacity: "0.7",
+                            }}
+                        >
+                            <Link to={person.route}>
+                                <Box
+                                    width={["80vw", "80vw", "400px", "400px"]}
+                                    height={["80vw", "80vw", "400px", "400px"]}
+                                    overflow="hidden"
+                                >
+                                    <button
+                                        style={{
+                                            outline: "none",
+                                            width: "100%",
+                                            height: "100%",
+                                        }}
                                     >
-                                        <button
+                                        <Img
+                                            fluid={
+                                                person.img.childImageSharp.fluid
+                                            }
                                             style={{
-                                                outline: "none",
                                                 width: "100%",
                                                 height: "100%",
                                             }}
-                                        >
-                                            <Img
-                                                fluid={
-                                                    person.img.childImageSharp
-                                                        .fluid
-                                                }
-                                                style={{
-                                                    width: "100%",
-                                                    height: "100%",
-                                                }}
-                                                alt={person.name}
-                                            />
-                                        </button>
-                                    </Box>
-                                </Link>
+                                            alt={person.name}
+                                        />
+                                    </button>
+                                </Box>
                                 <Heading
                                     color="white"
                                     size="lg"
-                                    textAlign="center"
-                                    width="200px"
+                                    textAlign="left"
+                                    width="100%"
                                     mt="20px"
+                                >
+                                    {person.position}
+                                </Heading>
+                                <Heading
+                                    color="gray.400"
+                                    size="md"
+                                    textAlign="left"
+                                    width="100%"
+                                    mt="5px"
                                 >
                                     {person.name}
                                 </Heading>
-                            </PseudoBox>
-                        </Box>
+                            </Link>
+                        </PseudoBox>
                     ))}
                 </Box>
             </Box>
