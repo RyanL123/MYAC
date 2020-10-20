@@ -188,14 +188,14 @@ const Events = () => {
                         }
                         link={event.fields.URL}
                         date={
-                            event.fields.Date == undefined
+                            event.fields.Date === undefined
                                 ? "00-00-00"
                                 : event.fields.Date
                         }
                     />
                 ),
                 date:
-                    event.fields.Date == undefined
+                    event.fields.Date === undefined
                         ? "00-00-00"
                         : event.fields.Date,
             }))

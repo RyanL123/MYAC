@@ -38,17 +38,16 @@ const Connects = () => {
                     subColor="blue.300"
                     color="white"
                 />
-                <Text color="gray.400" fontSize="xl" fontWeight="400" mt="30px">
+                <Text color="gray.300" fontSize="xl" fontWeight="400" mt="30px">
                     MYAC Connects are a great way to meet new people and get
                     involved in your community. Come out on the second wednesday
                     of every month to meet new, network, and find new
                     opportunities.
                 </Text>
-                <Box mt="20px">
+                <Box mt="30px">
                     <Link to="/events">
                         <Button
                             variantColor="blue"
-                            variant="link"
                             rightIcon="arrow-forward"
                             fontSize="18px"
                         >

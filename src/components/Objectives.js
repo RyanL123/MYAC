@@ -17,7 +17,7 @@ const Card = ({ title, content, icon }) => (
         <Heading color="white" size="lg" lineHeight="1em" mt="20px">
             {title}
         </Heading>
-        <Text color="gray.400" fontSize="lg" mt="18px">
+        <Text color="gray.300" fontSize="lg" mt="18px" ontWeight="400">
             {content}
         </Text>
     </Box>
