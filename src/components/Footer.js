@@ -38,7 +38,7 @@ const Footer = () => {
     `)
     return (
         <Box backgroundColor="gray.900" px="10vw" py="100px" textAlign="center">
-            <Link to="/">
+            <Link to="/" aria-label="Logo">
                 <Img fixed={logo.childImageSharp.fixed} />
             </Link>
             <Box
@@ -54,6 +54,7 @@ const Footer = () => {
                         href="https://www.instagram.com/myac_mississauga/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Instagram"
                     >
                         <Img fixed={ig.childImageSharp.fixed} />
                     </a>
@@ -63,6 +64,7 @@ const Footer = () => {
                         href="https://www.facebook.com/myacmississauga/"
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Facebook"
                     >
                         <Img fixed={fb.childImageSharp.fixed} />
                     </a>
@@ -72,6 +74,7 @@ const Footer = () => {
                         href="https://twitter.com/MYACMISSISSAUGA"
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="Twitter"
                     >
                         <Img fixed={twitter.childImageSharp.fixed} />
                     </a>
