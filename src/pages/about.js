@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Box, Heading, PseudoBox, Text } from "@chakra-ui/core"
+import React from "react"
+import { Box, Heading, PseudoBox } from "@chakra-ui/core"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import Title from "../components/Title"
