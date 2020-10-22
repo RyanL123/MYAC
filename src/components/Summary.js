@@ -12,12 +12,12 @@ const Summary = () => {
             backgroundColor="gray.50"
             display="flex"
             flexDirection={["column", "column", "column", "row"]}
-            justifyContent="space-between"
+            justifyContent="center"
             alignItems="center"
         >
             <Box
-                width={["100%", "100%", "700px", "900px"]}
-                pr={["0", "0", "0", "75px"]}
+                width={["100%", "100%", "500px", "500px"]}
+                mr={["0", "0", "125px", "125px"]}
             >
                 <Title
                     title="Empowering Youth"
@@ -28,14 +28,13 @@ const Summary = () => {
                 />
                 <Text
                     color="gray.500"
-                    mt="30px"
+                    mt="20px"
                     fontSize="xl"
-                    lineHeight="1.65em"
+                    lineHeight="1.5em"
                 >
                     They strive to represent the 145,000 youth in the city of
                     Mississauga and works to voice their opinions and better
-                    engage youth in their community. MYAC promotes the
-                    well-being of youth (aged 14-24) in the city of Mississauga.
+                    engage youth in their community.
                 </Text>
                 <Box mt="30px">
                     <Link to="/about">

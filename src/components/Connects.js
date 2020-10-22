@@ -8,7 +8,7 @@ const Connects = () => {
     return (
         <Box
             px="10vw"
-            py="150px"
+            py="100px"
             display="flex"
             flexDirection={[
                 "column-reverse",
@@ -16,11 +16,11 @@ const Connects = () => {
                 "column-reverse",
                 "row",
             ]}
-            justifyContent="space-between"
+            justifyContent="center"
             alignItems="center"
         >
             <Box
-                width={["200px", "300px", "600px", "700px"]}
+                width={["200px", "300px", "600px", "600px"]}
                 mt={["50px", "50px", "50px", null]}
                 borderRadius="20px"
                 overflow="hidden"
@@ -28,8 +28,8 @@ const Connects = () => {
                 <img src={connects} alt="connects" />
             </Box>
             <Box
-                width={["100%", "100%", "700px", "900px"]}
-                pl={["0", "0", "0", "75px"]}
+                width={["100%", "100%", "500px", "500px"]}
+                ml={["0", "0", "125px", "125px"]}
             >
                 <Title
                     title="MYAC Connects"
@@ -38,7 +38,13 @@ const Connects = () => {
                     subColor="blue.300"
                     color="white"
                 />
-                <Text color="gray.300" fontSize="xl" fontWeight="400" mt="30px">
+                <Text
+                    color="gray.300"
+                    fontSize="xl"
+                    fontWeight="400"
+                    mt="30px"
+                    lineHeight="1.5em"
+                >
                     MYAC Connects are a great way to meet new people and get
                     involved in your community. Come out on the second wednesday
                     of every month to meet new, network, and find new
