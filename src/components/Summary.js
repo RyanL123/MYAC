@@ -32,9 +32,9 @@ const Summary = () => {
                     fontSize="xl"
                     lineHeight="1.5em"
                 >
-                    They strive to represent the 145,000 youth in the city of
-                    Mississauga and works to voice their opinions and better
-                    engage youth in their community.
+                    We strive to represent the 145,000 youth in the city of
+                    Mississauga and work to voice their opinions and better
+                    engage youth in the community
                 </Text>
                 <Box mt="30px">
                     <Link to="/about">

@@ -86,9 +86,7 @@ export default () => (
             />
             <Card
                 title="Volunteer Opportunities"
-                content="	
-                Volunteer Opportunities
-                MYAC provides volunteer opportunities to youth, and encourages volunteerism and student leadership within Mississauga."
+                content="MYAC provides volunteer opportunities to youth, and encourages volunteerism and student leadership within Mississauga."
                 icon={
                     <svg
                         className="w-6 h-6"

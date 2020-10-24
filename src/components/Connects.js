@@ -46,8 +46,8 @@ const Connects = () => {
                     lineHeight="1.5em"
                 >
                     MYAC Connects are a great way to meet new people and get
-                    involved in your community. Come out on the second wednesday
-                    of every month to meet new, network, and find new
+                    involved in your community. Come out on the second Wednesday
+                    of every month to meet new people, network, and find new
                     opportunities.
                 </Text>
                 <Box mt="30px">
