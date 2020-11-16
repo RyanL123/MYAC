@@ -18,6 +18,7 @@ const Connects = () => {
             ]}
             justifyContent="center"
             alignItems="center"
+            id="connects"
         >
             <Box
                 width={["200px", "300px", "600px", "600px"]}

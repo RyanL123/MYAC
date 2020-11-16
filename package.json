@@ -15,7 +15,10 @@
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
+    "@chakra-ui/icons": "^1.0.0",
+    "@chakra-ui/system": "^1.0.0",
     "@emotion/core": "^10.0.35",
+    "@emotion/react": "^11.0.0",
     "@emotion/styled": "^10.0.27",
     "airtable": "^0.10.0",
     "emotion-theming": "^10.0.27",
@@ -29,6 +32,7 @@
     "gatsby-transformer-sharp": "^2.5.16",
     "node-fetch": "^2.6.1",
     "react": "^16.12.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.12.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^6.1.0"

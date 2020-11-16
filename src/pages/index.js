@@ -1,6 +1,7 @@
 import React from "react"
 import { Box } from "@chakra-ui/core"
 import Slant from "../components/Slant"
+import Anchor from "../components/Anchor"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
@@ -13,7 +14,11 @@ export default function Home() {
     return (
         <Box backgroundColor="gray.800" overflow="hidden">
             <SEO title="MYAC | Home" />
-            <Navbar />
+            <Navbar>
+                <Anchor name="Objectives" url="#objectives" />
+                <Anchor name="About" url="#about" />
+                <Anchor name="Connects" url="#connects" />
+            </Navbar>
             <Hero />
             <Objectives />
             <Summary />

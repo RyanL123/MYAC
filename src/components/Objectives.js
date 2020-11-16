@@ -29,7 +29,7 @@ const Card = ({ title, content, icon }) => (
 )
 
 export default () => (
-    <Box px="10vw" py="150px">
+    <Box px="10vw" py="150px" id="objectives">
         <Title
             title="Our Objectives"
             subtitle="By the youth, for the youth"

@@ -7,7 +7,7 @@ import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
-const About = () => {
+const Team = () => {
     const {
         alyssa,
         ben,
@@ -203,4 +203,4 @@ const About = () => {
     )
 }
 
-export default About
+export default Team

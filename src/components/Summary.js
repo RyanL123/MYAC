@@ -14,6 +14,7 @@ const Summary = () => {
             flexDirection={["column", "column", "column", "row"]}
             justifyContent="center"
             alignItems="center"
+            id="about"
         >
             <Box
                 width={["100%", "100%", "500px", "500px"]}
@@ -32,9 +33,9 @@ const Summary = () => {
                     fontSize="xl"
                     lineHeight="1.5em"
                 >
-                    We strive to represent the 145,000 youth in the city of
-                    Mississauga and work to voice their opinions and better
-                    engage youth in the community
+                    As a youth extension of the City of Mississauga, we
+                    represent the 145 000+ youths in the city. We help, engage,
+                    and empower.
                 </Text>
                 <Box mt="30px">
                     <Link to="/about">
