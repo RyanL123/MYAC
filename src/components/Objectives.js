@@ -66,7 +66,7 @@ export default () => (
             />
             <Card
                 title="Resources and Development"
-                content="MYAC provides resources and professional development to youth in Mississauga who are engaged in student leadership opportunities through the Youth Advisory Commitees, Teen Advisory Groups, and other youth groups."
+                content="MYAC provides resources and professional development to youth in Mississauga who are engaged in student leadership opportunities through the ambassador program and monthly connects."
                 icon={
                     <svg
                         className="w-6 h-6"
