@@ -11,7 +11,6 @@ import {
     DrawerContent,
     DrawerCloseButton,
     useDisclosure,
-    Button,
 } from "@chakra-ui/core"
 import { HamburgerIcon } from "@chakra-ui/icons"
 import { graphql, useStaticQuery, Link } from "gatsby"
