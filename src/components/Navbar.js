@@ -16,7 +16,7 @@ import { HamburgerIcon } from "@chakra-ui/icons"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import Headroom from "react-headroom"
-import { Mobile, Desktop, isMobile } from "./MediaQueries"
+import { Mobile, Desktop, IsMobile } from "./MediaQueries"
 import "../styles.css"
 
 const NavItem = ({ name, url }) => (
@@ -24,7 +24,7 @@ const NavItem = ({ name, url }) => (
         <PseudoBox
             color="gray.200"
             mx="20px"
-            my={isMobile() ? "10px" : "0px"}
+            my={IsMobile() ? "10px" : "0px"}
             transition="all .25s ease-in-out"
             _hover={{ color: "gray.50" }}
         >

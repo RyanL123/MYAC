@@ -71,6 +71,18 @@ const Team = () => {
     `)
     const people = [
         {
+            name: "Shirley Mu",
+            position: "Chairperson",
+            img: shirley,
+            route: "shirley",
+        },
+        {
+            name: "Daniel Ojeda",
+            position: "Vice Chairperson",
+            img: daniel,
+            route: "daniel",
+        },
+        {
             name: "Alyssa Guo",
             position: "Director of External Communication",
             img: alyssa,
@@ -88,12 +100,7 @@ const Team = () => {
             img: claire,
             route: "claire",
         },
-        {
-            name: "Daniel Ojeda",
-            position: "Vice Chairperson",
-            img: daniel,
-            route: "daniel",
-        },
+
         {
             name: "Hannah Mahr",
             position: "Director of Finance",
@@ -105,12 +112,6 @@ const Team = () => {
             position: "Director of Promotions",
             img: nidhi,
             route: "nidhi",
-        },
-        {
-            name: "Shirley Mu",
-            position: "Chairperson",
-            img: shirley,
-            route: "shirley",
         },
     ]
     return (

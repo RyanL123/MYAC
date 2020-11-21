@@ -38,7 +38,7 @@ const Summary = () => {
                     and empower.
                 </Text>
                 <Box mt="30px">
-                    <Link to="/about">
+                    <Link to="/team">
                         <Button
                             variantColor="blue"
                             rightIcon="arrow-forward"

@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 export default ({ name, position, bio, img, email }) => (
     <Box px="10vw" py="100px" backgroundColor="gray.800">
         <Box mb="50px">
-            <Link to="/about">
+            <Link to="/team">
                 <Button
                     variantColor="blue"
                     variant="link"
