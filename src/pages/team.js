@@ -177,7 +177,7 @@ const Team = () => {
                                     </button>
                                 </Box>
                                 <Heading
-                                    color="black"
+                                    color="black.900"
                                     size="lg"
                                     textAlign="left"
                                     width="100%"

@@ -4,8 +4,8 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 export default ({ name, position, bio, img, email }) => (
-    <Box px="10vw" py="100px" backgroundColor="gray.800">
-        <Box mb="50px">
+    <Box px="10vw" py="100px" backgroundColor="white">
+        <Box>
             <Link to="/team">
                 <Button
                     variantColor="blue"
@@ -22,6 +22,7 @@ export default ({ name, position, bio, img, email }) => (
             flexDirection={["column", null, "row"]}
             alignItems="center"
             justifyContent="space-evenly"
+            my="50px"
         >
             <Box>
                 <Box
@@ -38,7 +39,12 @@ export default ({ name, position, bio, img, email }) => (
                         style={{ width: "100%", height: "100%" }}
                     />
                 </Box>
-                <Heading color="white" size="lg" textAlign="center" mt="25px">
+                <Heading
+                    color="black.900"
+                    size="lg"
+                    textAlign="center"
+                    mt="25px"
+                >
                     {name}
                 </Heading>
                 <Box
@@ -52,7 +58,7 @@ export default ({ name, position, bio, img, email }) => (
                         <svg
                             class="w-6 h-6"
                             fill="none"
-                            stroke="white"
+                            stroke="black"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                         >
@@ -72,7 +78,7 @@ export default ({ name, position, bio, img, email }) => (
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Text color="white" fontSize="sm" ml="4px">
+                        <Text color="black.900" fontSize="sm" ml="4px">
                             {email}
                         </Text>
                     </a>
@@ -83,7 +89,7 @@ export default ({ name, position, bio, img, email }) => (
                 mt={["25px", "25px", "0px", "0px"]}
                 ml={[null, "25px", "25px"]}
             >
-                <Heading color="white" size="xl">
+                <Heading color="black.900" size="xl">
                     {position}
                 </Heading>
                 <Box my="25px">
