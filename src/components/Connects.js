@@ -38,7 +38,7 @@ const Connects = () => {
                     subtitle="Always Up To Something"
                     align="left"
                     subColor="blue.500"
-                    color="black"
+                    color="black.900"
                 />
                 <Text
                     color="gray.400"

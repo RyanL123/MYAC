@@ -124,7 +124,7 @@ const Team = () => {
                     subtitle="The people who make it happen"
                     align="left"
                     subColor="blue.500"
-                    color="black"
+                    color="black.900"
                 />
                 <Box
                     display="grid"

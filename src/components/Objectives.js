@@ -14,7 +14,7 @@ const Card = ({ title, content, icon }) => (
             {icon}
         </Box>
         <Heading
-            color="black"
+            color="black.900"
             size="lg"
             fontSize="1.9rem"
             lineHeight="1em"
@@ -41,7 +41,7 @@ export default () => (
             subtitle="By the youth, for the youth"
             align="center"
             subColor="blue.500"
-            color="black"
+            color="black.900"
         />
         <Box
             mt="50px"

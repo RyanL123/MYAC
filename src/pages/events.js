@@ -112,7 +112,7 @@ const Event = ({ title, desc, status, img, link, date }) => (
             height="100%"
         >
             <Box>
-                <Heading color="white" size="lg">
+                <Heading color="black.900" size="lg">
                     {title}
                 </Heading>
                 <Box
@@ -123,7 +123,7 @@ const Event = ({ title, desc, status, img, link, date }) => (
                 >
                     {getBadge(status)}
                     <Text
-                        color="gray.100"
+                        color="gray.400"
                         fontSize="md"
                         fontWeight="500"
                         ml="10px"
