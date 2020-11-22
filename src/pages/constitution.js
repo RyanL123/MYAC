@@ -27,7 +27,7 @@ export default () => (
                 </a>
             </Box>
             <Box mt="75px">
-                <Heading color="black" size="xl" textAlign="center">
+                <Heading color="black.900" size="xl" textAlign="center">
                     MISSISSAUGA YOUTH ACTION COMMITTEE CONSTITUTION
                 </Heading>
                 <Text
