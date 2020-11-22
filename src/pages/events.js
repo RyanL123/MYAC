@@ -87,9 +87,9 @@ const parseDate = date => {
 
 const Event = ({ title, desc, status, img, link, date }) => (
     <Box
-        shadow="lg"
+        shadow="xl"
         p="24px"
-        backgroundColor="white"
+        backgroundColor="gray.50"
         border="1px rgb(0, 0, 0, 0.1) solid"
         borderRadius="lg"
         display={

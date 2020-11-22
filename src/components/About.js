@@ -96,7 +96,7 @@ export default ({ name, position, bio, img, email }) => (
                     <hr></hr>
                 </Box>
                 <Text
-                    color="gray.400"
+                    color="gray.500"
                     fontWeight="400"
                     fontSize="lg"
                     lineHeight="1.65em"

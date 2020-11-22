@@ -140,22 +140,22 @@ const Team = () => {
                     mt="100px"
                 >
                     {people.map(person => (
-                        <PseudoBox
+                        <Box
                             display="flex"
                             flexDirection="column"
                             justifySelf="center"
                             alignItems="center"
-                            transition="transform 0.5s, opacity 0.5s"
                             width="100%"
-                            _hover={{
-                                opacity: "0.7",
-                            }}
                         >
                             <Link to={person.route}>
-                                <Box
+                                <PseudoBox
                                     width={["80vw", "80vw", "400px", "400px"]}
                                     height={["80vw", "80vw", "400px", "400px"]}
                                     overflow="hidden"
+                                    transition="transform 0.5s, opacity 0.5s"
+                                    _hover={{
+                                        opacity: "0.85",
+                                    }}
                                 >
                                     <button
                                         style={{
@@ -175,7 +175,7 @@ const Team = () => {
                                             alt={person.name}
                                         />
                                     </button>
-                                </Box>
+                                </PseudoBox>
                                 <Heading
                                     color="black.900"
                                     size="lg"
@@ -195,7 +195,7 @@ const Team = () => {
                                     {person.name}
                                 </Heading>
                             </Link>
-                        </PseudoBox>
+                        </Box>
                     ))}
                 </Box>
             </Box>
