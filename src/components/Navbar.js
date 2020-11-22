@@ -89,7 +89,7 @@ const Navbar = ({ children }) => {
                         backgroundColor="white"
                         boxShadow="inset 0 -1px 0 0 rgba(0,0,0,0.1);"
                     >
-                        <Link to="/">
+                        <Link to="/" aria-label="Logo">
                             <Img fixed={logo.childImageSharp.fixed} />
                         </Link>
                         <Box
@@ -175,7 +175,7 @@ const Navbar = ({ children }) => {
                         backgroundColor="white"
                         boxShadow="inset 0 -1px 0 0 rgba(0,0,0,0.1);"
                     >
-                        <Link to="/">
+                        <Link to="/" aria-label="Logo">
                             <Img fixed={logo.childImageSharp.fixed} />
                         </Link>
                         <HamburgerIcon
