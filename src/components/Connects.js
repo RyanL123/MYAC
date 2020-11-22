@@ -41,7 +41,7 @@ const Connects = () => {
                     color="black.900"
                 />
                 <Text
-                    color="gray.400"
+                    color="gray.500"
                     fontSize="xl"
                     fontWeight="400"
                     mt="30px"

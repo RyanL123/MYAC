@@ -123,7 +123,7 @@ const Event = ({ title, desc, status, img, link, date }) => (
                 >
                     {getBadge(status)}
                     <Text
-                        color="gray.400"
+                        color="gray.500"
                         fontSize="md"
                         fontWeight="500"
                         ml="10px"
@@ -131,7 +131,7 @@ const Event = ({ title, desc, status, img, link, date }) => (
                         {parseDate(date)}
                     </Text>
                 </Box>
-                <Text color="gray.300" fontSize="lg" fontWeight="500" mt="10px">
+                <Text color="gray.500" fontSize="lg" fontWeight="500" mt="10px">
                     {desc}
                 </Text>
             </Box>
@@ -142,7 +142,12 @@ const Event = ({ title, desc, status, img, link, date }) => (
                     rightIcon="external-link"
                     mt="10px"
                 >
-                    <a href={link} target="_blank" rel="noopener noreferrer">
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Learn More"
+                    >
                         Learn More
                     </a>
                 </Button>
