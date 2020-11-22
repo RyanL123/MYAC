@@ -22,11 +22,11 @@ import "../styles.css"
 const NavItem = ({ name, url }) => (
     <Link to={url} activeClassName="active">
         <PseudoBox
-            color="gray.200"
+            color="black.900"
             mx="20px"
             my={IsMobile() ? "10px" : "0px"}
             transition="all .25s ease-in-out"
-            _hover={{ color: "gray.50" }}
+            _hover={{ color: "blue.300" }}
         >
             <Text fontWeight="500">{name}</Text>
         </PseudoBox>
@@ -86,8 +86,8 @@ const Navbar = ({ children }) => {
                         px="10vw"
                         alignItems="center"
                         justifyContent="space-between"
-                        backgroundColor="gray.900"
-                        borderBottom="1px solid hsla(0,0%,100%,0.2)"
+                        backgroundColor="white"
+                        boxShadow="inset 0 -1px 0 0 rgba(0,0,0,0.1);"
                     >
                         <Link to="/">
                             <Img fixed={logo.childImageSharp.fixed} />
@@ -172,7 +172,8 @@ const Navbar = ({ children }) => {
                         px="10vw"
                         alignItems="center"
                         justifyContent="space-between"
-                        backgroundColor="gray.900"
+                        backgroundColor="white"
+                        boxShadow="inset 0 -1px 0 0 rgba(0,0,0,0.1);"
                     >
                         <Link to="/">
                             <Img fixed={logo.childImageSharp.fixed} />
@@ -185,7 +186,7 @@ const Navbar = ({ children }) => {
                         />
                         <Drawer isOpen={isOpen} onClose={onClose}>
                             <DrawerOverlay>
-                                <DrawerContent backgroundColor="gray.900">
+                                <DrawerContent backgroundColor="white">
                                     <DrawerCloseButton />
                                     <DrawerHeader>
                                         <Link to="/">

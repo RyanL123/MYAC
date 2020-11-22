@@ -25,7 +25,7 @@ const Summary = () => {
                     subtitle="We are the Mississauga Youth Action Committee"
                     align="left"
                     subColor="blue.500"
-                    color="black.800"
+                    color="black"
                 />
                 <Text
                     color="gray.500"
@@ -43,6 +43,8 @@ const Summary = () => {
                             variantColor="blue"
                             rightIcon="arrow-forward"
                             fontSize="18px"
+                            variant="outline"
+                            height="50px"
                         >
                             Meet The Team
                         </Button>

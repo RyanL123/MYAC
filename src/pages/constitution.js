@@ -5,8 +5,8 @@ import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 
 export default () => (
-    <Box backgroundColor="gray.800">
-        <SEO />
+    <Box backgroundColor="white">
+        <SEO title="MYAC | Constitution" />
         <Navbar />
         <Box px="10vw" py="100px">
             <Box display="flex" justifyContent="space-between">
@@ -27,7 +27,7 @@ export default () => (
                 </a>
             </Box>
             <Box mt="75px">
-                <Heading color="white" size="xl" textAlign="center">
+                <Heading color="black" size="xl" textAlign="center">
                     MISSISSAUGA YOUTH ACTION COMMITTEE CONSTITUTION
                 </Heading>
                 <Text

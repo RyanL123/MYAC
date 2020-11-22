@@ -22,12 +22,12 @@ export default function Home() {
             <Hero />
             <Objectives />
             <Summary />
-            <Slant
+            {/* <Slant
                 bg="gray.800"
                 c1="linear-gradient(90deg, rgba(28,35,48,1) 0%, rgba(88,105,139,1) 35%, rgba(28,35,48,1) 100%)"
                 c2="linear-gradient(90deg, rgba(28,35,48,1) 0%, rgba(68,82,109,1) 35%, rgba(28,35,48,1) 100%)"
                 c3="linear-gradient(90deg, rgba(28,35,48,1) 0%, rgba(48,58,78,1) 35%, rgba(28,35,48,1) 100%)"
-            />
+            /> */}
             <Connects />
             <Footer />
         </Box>

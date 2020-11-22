@@ -1,10 +1,11 @@
 import React from "react"
-import { Box, Heading } from "@chakra-ui/core"
-import { graphql, useStaticQuery } from "gatsby"
+import { Box, Heading, Button } from "@chakra-ui/core"
+import { graphql, useStaticQuery, Link } from "gatsby"
+import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 const Hero = () => {
-    const { hero } = useStaticQuery(graphql`
+    const { hero, logo } = useStaticQuery(graphql`
         query {
             hero: file(relativePath: { eq: "hero.jpg" }) {
                 childImageSharp {
@@ -13,28 +14,74 @@ const Hero = () => {
                     }
                 }
             }
+            logo: file(relativePath: { eq: "logo.png" }) {
+                childImageSharp {
+                    fluid(maxHeight: 100, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
         }
     `)
     return (
-        <Box height="700px">
+        <Box
+            height="85vh"
+            backgroundColor="white"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+        >
             <BackgroundImage
                 fluid={hero.childImageSharp.fluid}
                 style={{
                     height: "100%",
-                    padding: "50px 10vw",
+                    width: "100%",
                     display: "flex",
+                    justifyContent: "center",
                     alignItems: "center",
                 }}
-                alt="Group Photo"
+                alt="Hero Image"
             >
-                <Box maxWidth="1200px">
-                    <Heading color="white" size="2xl">
+                <Box
+                    display="flex"
+                    flexDir="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    textAlign="center"
+                    px="10px"
+                >
+                    <Box width={["100px", "200px"]}>
+                        <Img fluid={logo.childImageSharp.fluid} />
+                    </Box>
+                    <Heading
+                        color="blue.400"
+                        size="2xl"
+                        mt="20px"
+                        lineHeight="1em"
+                    >
                         Mississauga Youth Action Committee
                     </Heading>
-                    <Heading color="white" mt="50px" size="lg">
+                    <Heading
+                        color="gray.700"
+                        size="md"
+                        my="20px"
+                        fontWeight="500"
+                    >
                         We represent the youth of Mississauga. We help, engage,
-                        and empower.
+                        and empower
                     </Heading>
+                    <Box my={["25px", "50px"]}>
+                        <Link to="/constitution">
+                            <Button
+                                variantColor="blue"
+                                fontSize="18px"
+                                variant="outline"
+                                height="50px"
+                            >
+                                Our Constitution
+                            </Button>
+                        </Link>
+                    </Box>
                 </Box>
             </BackgroundImage>
         </Box>

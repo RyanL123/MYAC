@@ -89,7 +89,8 @@ const Event = ({ title, desc, status, img, link, date }) => (
     <Box
         shadow="lg"
         p="24px"
-        backgroundColor="gray.700"
+        backgroundColor="white"
+        border="1px rgb(0, 0, 0, 0.1) solid"
         borderRadius="lg"
         display={
             status === "Planning" || status === undefined ? "none" : "flex"
@@ -154,7 +155,7 @@ const Placeholder = () => (
     <Box
         shadow="lg"
         p="24px"
-        backgroundColor="gray.700"
+        backgroundColor="white"
         borderRadius="lg"
         display="flex"
         flexDirection="column"
@@ -208,7 +209,7 @@ const Events = () => {
         })
     })
     return (
-        <Box backgroundColor="gray.800">
+        <Box backgroundColor="white">
             <SEO title="MYAC | Events" />
             <Navbar />
             <Box px="10vw" py="100px">

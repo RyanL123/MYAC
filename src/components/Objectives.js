@@ -7,18 +7,24 @@ const Card = ({ title, content, icon }) => (
         <Box
             width="42px"
             height="42px"
-            backgroundColor="gray.700"
+            backgroundColor="blue.50"
             borderRadius="8px"
             p="6px"
         >
             {icon}
         </Box>
-        <Heading color="white" size="lg" lineHeight="1em" mt="25px">
+        <Heading
+            color="black"
+            size="lg"
+            fontSize="1.9rem"
+            lineHeight="1em"
+            mt="25px"
+        >
             {title}
         </Heading>
         <Text
-            color="gray.300"
-            fontSize="md"
+            color="gray.500"
+            fontSize="lg"
             mt="25px"
             fontWeight="400"
             lineHeight="1.65em"
@@ -29,13 +35,13 @@ const Card = ({ title, content, icon }) => (
 )
 
 export default () => (
-    <Box px="10vw" py="150px" id="objectives">
+    <Box px="10vw" py="150px" backgroundColor="white" id="objectives">
         <Title
             title="Our Objectives"
             subtitle="By the youth, for the youth"
             align="center"
-            subColor="blue.300"
-            color="white"
+            subColor="blue.500"
+            color="black"
         />
         <Box
             mt="50px"
@@ -51,7 +57,7 @@ export default () => (
                     <svg
                         className="w-6 h-6"
                         fill="none"
-                        stroke="#60a1ec"
+                        stroke="#3686e5"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -71,7 +77,7 @@ export default () => (
                     <svg
                         className="w-6 h-6"
                         fill="none"
-                        stroke="#60a1ec"
+                        stroke="#3686e5"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -91,7 +97,7 @@ export default () => (
                     <svg
                         className="w-6 h-6"
                         fill="none"
-                        stroke="#60a1ec"
+                        stroke="#3686e5"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                     >

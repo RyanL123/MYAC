@@ -19,6 +19,7 @@ const Connects = () => {
             justifyContent="center"
             alignItems="center"
             id="connects"
+            backgroundColor="white"
         >
             <Box
                 width={["200px", "300px", "600px", "600px"]}
@@ -36,11 +37,11 @@ const Connects = () => {
                     title="MYAC Connects"
                     subtitle="Always Up To Something"
                     align="left"
-                    subColor="blue.300"
-                    color="white"
+                    subColor="blue.500"
+                    color="black"
                 />
                 <Text
-                    color="gray.300"
+                    color="gray.400"
                     fontSize="xl"
                     fontWeight="400"
                     mt="30px"
@@ -57,6 +58,8 @@ const Connects = () => {
                             variantColor="blue"
                             rightIcon="arrow-forward"
                             fontSize="18px"
+                            variant="outline"
+                            height="50px"
                         >
                             View Our Events
                         </Button>

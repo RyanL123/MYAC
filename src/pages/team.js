@@ -115,7 +115,7 @@ const Team = () => {
         },
     ]
     return (
-        <Box backgroundColor="gray.800">
+        <Box backgroundColor="white">
             <SEO title="MYAC | About" />
             <Navbar />
             <Box px="10vw" py="100px">
@@ -123,8 +123,8 @@ const Team = () => {
                     title="MYAC Board Of Directors"
                     subtitle="The people who make it happen"
                     align="left"
-                    subColor="blue.300"
-                    color="white"
+                    subColor="blue.500"
+                    color="black"
                 />
                 <Box
                     display="grid"
@@ -177,7 +177,7 @@ const Team = () => {
                                     </button>
                                 </Box>
                                 <Heading
-                                    color="white"
+                                    color="black"
                                     size="lg"
                                     textAlign="left"
                                     width="100%"
@@ -186,7 +186,7 @@ const Team = () => {
                                     {person.position}
                                 </Heading>
                                 <Heading
-                                    color="gray.400"
+                                    color="gray.500"
                                     size="md"
                                     textAlign="left"
                                     width="100%"

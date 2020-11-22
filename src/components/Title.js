@@ -6,7 +6,7 @@ export default ({ title, subtitle, align, subColor, color }) => (
         <Heading color={subColor} size="md" fontWeight="500">
             {subtitle}
         </Heading>
-        <Heading color={color} mt="25px" size="2xl" lineHeight="1em">
+        <Heading color={color} mt="10px" size="2xl" lineHeight="1em">
             {title}
         </Heading>
     </Box>
