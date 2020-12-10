@@ -7,9 +7,9 @@ import BackgroundImage from "gatsby-background-image"
 const Hero = () => {
     const { hero, logo } = useStaticQuery(graphql`
         query {
-            hero: file(relativePath: { eq: "hero.jpg" }) {
+            hero: file(relativePath: { eq: "group.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1440, maxHeight: 900, quality: 100) {
+                    fluid(maxWidth: 1920, maxHeight: 1280, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
@@ -25,7 +25,7 @@ const Hero = () => {
     `)
     return (
         <Box
-            height="85vh"
+            height="100vh"
             backgroundColor="white"
             display="flex"
             justifyContent="center"
@@ -54,28 +54,27 @@ const Hero = () => {
                         <Img fluid={logo.childImageSharp.fluid} />
                     </Box>
                     <Heading
-                        color="blue.400"
+                        color="white"
                         size="2xl"
                         mt="20px"
                         lineHeight="1em"
                     >
                         Mississauga Youth Action Committee
                     </Heading>
-                    <Heading
-                        color="gray.700"
-                        size="md"
-                        my="20px"
-                        fontWeight="500"
-                    >
+                    <Heading color="white" size="md" my="20px" fontWeight="500">
                         We represent the youth of Mississauga. We help, engage,
                         and empower
                     </Heading>
                     <Box my={["25px", "50px"]}>
-                        <a href="/constitution.pdf">
+                        <a
+                            href="/constitution.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <Button
                                 variantColor="blue"
                                 fontSize="18px"
-                                variant="outline"
+                                variant="solid"
                                 height="50px"
                             >
                                 Our Constitution
