@@ -32,7 +32,6 @@ const Hero = () => {
     `)
     return (
         <Box
-            // height="85vh"
             backgroundColor="white"
             display="flex"
             flexDir="column"
@@ -47,7 +46,7 @@ const Hero = () => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    padding: "30vh 0px",
+                    padding: "20vh 0",
                 }}
                 alt="Hero Image"
             >
