@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 const Hero = () => {
-    const { hero, logo } = useStaticQuery(graphql`
+    const { hero, logo, group } = useStaticQuery(graphql`
         query {
             hero: file(relativePath: { eq: "hero.jpg" }) {
                 childImageSharp {
@@ -21,13 +21,21 @@ const Hero = () => {
                     }
                 }
             }
+            group: file(relativePath: { eq: "group2.jpg" }) {
+                childImageSharp {
+                    fluid(maxHeight: 1080, maxWidth: 1920, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
         }
     `)
     return (
         <Box
-            height="85vh"
+            // height="85vh"
             backgroundColor="white"
             display="flex"
+            flexDir="column"
             justifyContent="center"
             alignItems="center"
         >
@@ -39,6 +47,7 @@ const Hero = () => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    padding: "30vh 0px",
                 }}
                 alt="Hero Image"
             >
@@ -84,6 +93,9 @@ const Hero = () => {
                     </Box>
                 </Box>
             </BackgroundImage>
+            <Box width="70%" height="auto">
+                <Img fluid={group.childImageSharp.fluid} />
+            </Box>
         </Box>
     )
 }
