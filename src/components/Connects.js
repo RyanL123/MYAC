@@ -33,16 +33,16 @@ const Connects = () => {
             backgroundColor="white"
         >
             <Box
-                width={["200px", "300px", "600px", null]}
+                width={["100%", null, "600px"]}
                 height="auto"
                 mt={["50px", "50px", "50px", "0px"]}
                 overflow="hidden"
                 borderRadius="10px"
             >
-                <Img fluid={connects.childImageSharp.fluid} alt="team" />
+                <Img fluid={connects.childImageSharp.fluid} alt="Connects" />
             </Box>
             <Box
-            width={["100%", "100%", "500px", "500px"]}
+                width={["100%", "100%", "500px", "500px"]}
                 ml={["0", "0", "125px", "125px"]}
             >
                 <Title

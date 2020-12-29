@@ -66,7 +66,7 @@ const Summary = () => {
                 </Box>
             </Box>
             <Box
-                width={["200px", "300px", "600px", null]}
+                width={["100%", null, "600px"]}
                 height="auto"
                 mt={["50px", "50px", "50px", "0px"]}
                 borderRadius="10px"
