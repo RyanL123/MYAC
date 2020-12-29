@@ -1,6 +1,6 @@
 import React from "react"
 import { Box } from "@chakra-ui/core"
-import Slant from "../components/Slant"
+// import Slant from "../components/Slant"
 import Anchor from "../components/Anchor"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"

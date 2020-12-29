@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Heading, Button } from "@chakra-ui/core"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
@@ -66,20 +66,16 @@ const Hero = () => {
                         and empower
                     </Heading>
                     <Box my={["25px", "50px"]}>
-                        <a
-                            href="/constitution.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <Link to="/team">
                             <Button
                                 variantColor="blue"
                                 fontSize="18px"
                                 variant="solid"
                                 height="50px"
                             >
-                                Our Constitution
+                                Meet The Team
                             </Button>
-                        </a>
+                        </Link>
                     </Box>
                 </Box>
             </BackgroundImage>
