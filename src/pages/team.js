@@ -1,6 +1,7 @@
 import React from "react"
 import { Box, Heading, PseudoBox } from "@chakra-ui/core"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
 import Title from "../components/Title"
 import SEO from "../components/SEO"
@@ -9,6 +10,7 @@ import Footer from "../components/Footer"
 
 const Team = () => {
     const {
+        team,
         alyssa,
         ben,
         claire,
@@ -18,6 +20,13 @@ const Team = () => {
         shirley,
     } = useStaticQuery(graphql`
         query {
+            team: file(relativePath: { eq: "hero.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1920, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
             alyssa: file(relativePath: { eq: "alyssa.jpg" }) {
                 childImageSharp {
                     fluid(maxHeight: 700, quality: 100) {
@@ -116,16 +125,36 @@ const Team = () => {
     ]
     return (
         <Box backgroundColor="white">
-            <SEO title="MYAC | About" />
+            <SEO title="MYAC | Team" />
             <Navbar />
+            <BackgroundImage
+                fluid={team.childImageSharp.fluid}
+                style={{
+                    height: "100%",
+                    width: "100%",
+                    backgroundPosition: "center top",
+                }}
+                alt="Team Image"
+            >
+                <Box
+                    px="10vw"
+                    py="100px"
+                    height={["100px", null, "350px", null]}
+                    width="100%"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                >
+                    <Title
+                        title="MYAC Board Of Directors"
+                        subtitle="The people who make it happen"
+                        align="center"
+                        subColor="blue.300"
+                        color="white"
+                    />
+                </Box>
+            </BackgroundImage>
             <Box px="10vw" py="100px">
-                <Title
-                    title="MYAC Board Of Directors"
-                    subtitle="The people who make it happen"
-                    align="left"
-                    subColor="blue.500"
-                    color="black.900"
-                />
                 <Box
                     display="grid"
                     gridTemplateColumns={[
@@ -137,7 +166,6 @@ const Team = () => {
                     gridAutoFlow="row"
                     gridColumnGap={5}
                     gridRowGap={10}
-                    mt="100px"
                 >
                     {people.map(person => (
                         <Box
