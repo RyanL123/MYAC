@@ -1,10 +1,21 @@
 import React from "react"
 import { Box, Text, Button } from "@chakra-ui/core"
 import Title from "./Title"
-import { Link } from "gatsby"
-import summary from "../assets/summary.svg"
+import { useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 const Summary = () => {
+    const { summary } = useStaticQuery(graphql`
+        query {
+            summary: file(relativePath: { eq: "summary.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1920, maxHeight: 1280, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+        }
+    `)
     return (
         <Box
             px="10vw"
@@ -38,26 +49,30 @@ const Summary = () => {
                     and empower.
                 </Text>
                 <Box mt="30px">
-                    <Link to="/team">
+                    <a
+                        href="/constitution.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Button
                             variantColor="blue"
-                            rightIcon="arrow-forward"
                             fontSize="18px"
                             variant="outline"
                             height="50px"
                         >
-                            Meet The Team
+                            Our Constitution
                         </Button>
-                    </Link>
+                    </a>
                 </Box>
             </Box>
             <Box
-                width={["200px", "300px", "400px", "500px"]}
-                mt={["50px", "50px", "50px", null]}
-                borderRadius="20px"
+                width={["100%", null, "600px"]}
+                height="auto"
+                mt={["50px", "50px", "50px", "0px"]}
+                borderRadius="10px"
                 overflow="hidden"
             >
-                <img src={summary} alt="team" />
+                <Img fluid={summary.childImageSharp.fluid} alt="team" />
             </Box>
         </Box>
     )
