@@ -158,70 +158,73 @@ const Team = () => {
                 <Box
                     display="grid"
                     gridTemplateColumns={[
-                        "repeat(auto-fit, minmax(200px, 80vw))",
-                        "repeat(auto-fit, minmax(200px, 80vw))",
-                        "repeat(auto-fit, minmax(400px, 1fr))",
-                        "repeat(auto-fit, minmax(400px, 1fr))",
+                        "1fr",
+                        null,
+                        "repeat(auto-fit, minmax(300px, 1fr))",
+                        null,
                     ]}
                     gridAutoFlow="row"
                     gridColumnGap={5}
                     gridRowGap={10}
                 >
                     {people.map(person => (
-                        <Box
-                            display="flex"
-                            flexDirection="column"
-                            justifySelf="center"
-                            alignItems="center"
-                            width="100%"
-                        >
+                        <Box>
                             <Link to={person.route}>
-                                <PseudoBox
-                                    width={["80vw", "80vw", "400px", "400px"]}
-                                    height={["80vw", "80vw", "400px", "400px"]}
-                                    overflow="hidden"
-                                    transition="transform 0.5s, opacity 0.5s"
-                                    _hover={{
-                                        opacity: "0.85",
-                                    }}
+                                <Box
+                                    display="flex"
+                                    flexDirection="column"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    width="100%"
                                 >
-                                    <button
-                                        style={{
-                                            outline: "none",
-                                            width: "100%",
-                                            height: "100%",
+                                    <PseudoBox
+                                        width={["80vw", null, "300px", null]}
+                                        height={["80vw", null, "300px", null]}
+                                        overflow="hidden"
+                                        transition="transform 0.5s, opacity 0.5s"
+                                        _hover={{
+                                            opacity: "0.85",
                                         }}
                                     >
-                                        <Img
-                                            fluid={
-                                                person.img.childImageSharp.fluid
-                                            }
+                                        <button
                                             style={{
+                                                outline: "none",
                                                 width: "100%",
                                                 height: "100%",
                                             }}
-                                            alt={person.name}
-                                        />
-                                    </button>
-                                </PseudoBox>
-                                <Heading
-                                    color="black.900"
-                                    size="lg"
-                                    textAlign="left"
-                                    width="100%"
-                                    mt="20px"
-                                >
-                                    {person.position}
-                                </Heading>
-                                <Heading
-                                    color="gray.500"
-                                    size="md"
-                                    textAlign="left"
-                                    width="100%"
-                                    mt="5px"
-                                >
-                                    {person.name}
-                                </Heading>
+                                        >
+                                            <Img
+                                                fluid={
+                                                    person.img.childImageSharp
+                                                        .fluid
+                                                }
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%",
+                                                }}
+                                                alt={person.name}
+                                            />
+                                        </button>
+                                    </PseudoBox>
+                                    <Heading
+                                        color="black.900"
+                                        size="lg"
+                                        textAlign="left"
+                                        width={["80vw", "80vw", "300px", null]}
+                                        mt="20px"
+                                    >
+                                        {person.position}
+                                    </Heading>
+                                    <Heading
+                                        color="gray.500"
+                                        size="md"
+                                        textAlign="left"
+                                        width={["80vw", "80vw", "300px", null]}
+                                        mt="5px"
+                                    >
+                                        {person.name}
+                                    </Heading>
+                                </Box>
                             </Link>
                         </Box>
                     ))}
