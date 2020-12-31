@@ -15,9 +15,9 @@ export default function Home() {
         <Box backgroundColor="gray.800" overflow="hidden">
             <SEO title="MYAC | Home" />
             <Navbar>
-                <Anchor name="Objectives" url="#objectives" />
+                {/* <Anchor name="Objectives" url="#objectives" />
                 <Anchor name="About" url="#about" />
-                <Anchor name="Connects" url="#connects" />
+                <Anchor name="Connects" url="#connects" /> */}
             </Navbar>
             <Hero />
             <Objectives />

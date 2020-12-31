@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 import Title from "../components/Title"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
+import Anchor from "../components/Anchor"
 import Footer from "../components/Footer"
 
 const Team = () => {
@@ -127,35 +128,33 @@ const Team = () => {
         <Box backgroundColor="white">
             <SEO title="MYAC | Team" />
             <Navbar />
-            <BackgroundImage
-                fluid={team.childImageSharp.fluid}
-                style={{
-                    height: "100%",
-                    width: "100%",
-                    backgroundPosition: "center top",
-                }}
-                alt="Team Image"
+            <Box
+                height={["100px", null, "350px", null]}
+                width="100%"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
             >
-                <Box
-                    px="10vw"
-                    py="100px"
-                    height={["100px", null, "350px", null]}
-                    width="100%"
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                >
-                    <Title
-                        title="MYAC Board Of Directors"
-                        subtitle="The people who make it happen"
-                        align="center"
-                        subColor="blue.300"
-                        color="white"
-                    />
-                </Box>
-            </BackgroundImage>
+                <BackgroundImage
+                    fluid={team.childImageSharp.fluid}
+                    style={{
+                        height: "100%",
+                        width: "100%",
+                        backgroundPosition: "center top",
+                    }}
+                    alt="Team Image"
+                ></BackgroundImage>
+            </Box>
             <Box px="10vw" py="100px">
+                <Title
+                    title="MYAC Board Of Directors"
+                    subtitle="The people who make it happen"
+                    align="center"
+                    subColor="blue.500"
+                    color="black.900"
+                />
                 <Box
+                    pt="100px"
                     display="grid"
                     gridTemplateColumns={[
                         "1fr",
