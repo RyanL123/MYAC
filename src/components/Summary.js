@@ -19,7 +19,7 @@ const Summary = () => {
     return (
         <Box
             px="10vw"
-            py="150px"
+            py="100px"
             backgroundColor="gray.50"
             display="flex"
             flexDirection={["column", "column", "column", "row"]}

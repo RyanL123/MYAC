@@ -37,7 +37,7 @@ const Footer = () => {
         }
     `)
     return (
-        <Box backgroundColor="blue.800" px="10vw" py="100px" textAlign="center">
+        <Box backgroundColor="blue.800" px="10vw" py="50px" textAlign="center">
             <Link to="/" aria-label="Logo">
                 <Img fixed={logo.childImageSharp.fixed} />
             </Link>

@@ -2,8 +2,9 @@ import React from "react"
 import { Box, Text, Heading, Button } from "@chakra-ui/core"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import igBlack from "../assets/ig-black.svg"
 
-export default ({ name, position, bio, img, email }) => (
+export default ({ name, position, bio, img, email, ig }) => (
     <Box px="10vw" py="100px" backgroundColor="white">
         <Box>
             <Link to="/team">
@@ -78,9 +79,14 @@ export default ({ name, position, bio, img, email }) => (
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Text color="black.900" fontSize="sm" ml="4px">
+                        <Text color="black.900" fontSize="sm" mx="4px">
                             {email}
                         </Text>
+                    </a>
+                    <a href={ig} target="_blank" rel="noopener noreferrer">
+                        <Box width="16px" height="16px">
+                            <img src={igBlack} />
+                        </Box>
                     </a>
                 </Box>
             </Box>
@@ -92,9 +98,7 @@ export default ({ name, position, bio, img, email }) => (
                 <Heading color="black.900" size="xl">
                     {position}
                 </Heading>
-                <Box my="25px">
-                    <hr></hr>
-                </Box>
+                <Box my="25px" borderTop="1px solid rgba(0, 0, 0, 0.1)"></Box>
                 <Text
                     color="gray.500"
                     fontWeight="400"

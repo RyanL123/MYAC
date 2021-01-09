@@ -26,8 +26,9 @@ const Nidhi = () => {
                 img={avatar}
                 name="Nidhi Vasani"
                 position="Director of Promotions"
-                bio="Prior to her involvement with MYAC, Nidhi Vasani served as high executive positions on many other councils around the GTA. Through these experiences, Nidhi has developed a passion for youth empowerment and volunteerism. As a member of the BOD this year, she strives to reach out to as vast an expanse of Mississauga youth as possible, and ensure that their voices are heard within the community! Apart from this, Nidhi’s interests include reading, computer programming, dance, physics, graphic design, and finance. Fun fact: Nidhi is trained and certified to speed cycle competitively at a velodrome."
+                bio="Prior to her involvement with MYAC, Nidhi Vasani served as high executive positions on many other councils around the GTA. Through these experiences, Nidhi has developed a passion for youth empowerment and volunteerism. As the Director of Promotions this year, she strives to reach out to as vast an expanse of Mississauga youth as possible, and ensure that their voices are heard within the community! Apart from this, Nidhi’s interests include reading, computer programming, dance, physics, graphic design, and finance. Fun fact: Nidhi is trained and certified to speed cycle competitively at a velodrome."
                 email="nidhi.vasani@themyac.ca"
+                ig="https://www.instagram.com/nid.hi_279/"
             />
             <Footer />
         </Box>

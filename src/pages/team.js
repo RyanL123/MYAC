@@ -1,14 +1,17 @@
 import React from "react"
 import { Box, Heading, PseudoBox } from "@chakra-ui/core"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
 import Title from "../components/Title"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
+import Anchor from "../components/Anchor"
 import Footer from "../components/Footer"
 
 const Team = () => {
     const {
+        team,
         alyssa,
         ben,
         claire,
@@ -18,6 +21,13 @@ const Team = () => {
         shirley,
     } = useStaticQuery(graphql`
         query {
+            team: file(relativePath: { eq: "hero.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 1920, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
             alyssa: file(relativePath: { eq: "alyssa.jpg" }) {
                 childImageSharp {
                     fluid(maxHeight: 700, quality: 100) {
@@ -116,84 +126,104 @@ const Team = () => {
     ]
     return (
         <Box backgroundColor="white">
-            <SEO title="MYAC | About" />
+            <SEO title="MYAC | Team" />
             <Navbar />
+            <Box
+                height={["100px", null, "350px", null]}
+                width="100%"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <BackgroundImage
+                    fluid={team.childImageSharp.fluid}
+                    style={{
+                        height: "100%",
+                        width: "100%",
+                        backgroundPosition: "center top",
+                    }}
+                    alt="Team Image"
+                ></BackgroundImage>
+            </Box>
             <Box px="10vw" py="100px">
                 <Title
                     title="MYAC Board Of Directors"
                     subtitle="The people who make it happen"
-                    align="left"
+                    align="center"
                     subColor="blue.500"
                     color="black.900"
                 />
                 <Box
+                    pt="100px"
                     display="grid"
                     gridTemplateColumns={[
-                        "repeat(auto-fit, minmax(200px, 80vw))",
-                        "repeat(auto-fit, minmax(200px, 80vw))",
-                        "repeat(auto-fit, minmax(400px, 1fr))",
-                        "repeat(auto-fit, minmax(400px, 1fr))",
+                        "1fr",
+                        null,
+                        "repeat(auto-fit, minmax(300px, 1fr))",
+                        null,
                     ]}
                     gridAutoFlow="row"
                     gridColumnGap={5}
                     gridRowGap={10}
-                    mt="100px"
                 >
                     {people.map(person => (
-                        <Box
-                            display="flex"
-                            flexDirection="column"
-                            justifySelf="center"
-                            alignItems="center"
-                            width="100%"
-                        >
+                        <Box>
                             <Link to={person.route}>
-                                <PseudoBox
-                                    width={["80vw", "80vw", "400px", "400px"]}
-                                    height={["80vw", "80vw", "400px", "400px"]}
-                                    overflow="hidden"
-                                    transition="transform 0.5s, opacity 0.5s"
-                                    _hover={{
-                                        opacity: "0.85",
-                                    }}
+                                <Box
+                                    display="flex"
+                                    flexDirection="column"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    width="100%"
                                 >
-                                    <button
-                                        style={{
-                                            outline: "none",
-                                            width: "100%",
-                                            height: "100%",
+                                    <PseudoBox
+                                        width={["80vw", null, "300px", null]}
+                                        height={["80vw", null, "300px", null]}
+                                        overflow="hidden"
+                                        transition="transform 0.5s, opacity 0.5s"
+                                        _hover={{
+                                            opacity: "0.85",
                                         }}
                                     >
-                                        <Img
-                                            fluid={
-                                                person.img.childImageSharp.fluid
-                                            }
+                                        <button
                                             style={{
+                                                outline: "none",
                                                 width: "100%",
                                                 height: "100%",
                                             }}
-                                            alt={person.name}
-                                        />
-                                    </button>
-                                </PseudoBox>
-                                <Heading
-                                    color="black.900"
-                                    size="lg"
-                                    textAlign="left"
-                                    width="100%"
-                                    mt="20px"
-                                >
-                                    {person.position}
-                                </Heading>
-                                <Heading
-                                    color="gray.500"
-                                    size="md"
-                                    textAlign="left"
-                                    width="100%"
-                                    mt="5px"
-                                >
-                                    {person.name}
-                                </Heading>
+                                        >
+                                            <Img
+                                                fluid={
+                                                    person.img.childImageSharp
+                                                        .fluid
+                                                }
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%",
+                                                }}
+                                                alt={person.name}
+                                            />
+                                        </button>
+                                    </PseudoBox>
+                                    <Heading
+                                        color="black.900"
+                                        size="lg"
+                                        textAlign="left"
+                                        width={["80vw", "80vw", "300px", null]}
+                                        mt="20px"
+                                    >
+                                        {person.position}
+                                    </Heading>
+                                    <Heading
+                                        color="gray.500"
+                                        size="md"
+                                        textAlign="left"
+                                        width={["80vw", "80vw", "300px", null]}
+                                        mt="5px"
+                                    >
+                                        {person.name}
+                                    </Heading>
+                                </Box>
                             </Link>
                         </Box>
                     ))}
