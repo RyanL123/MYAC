@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import {
     Box,
     Heading,
@@ -11,14 +12,6 @@ import {
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-const fetch = require("node-fetch")
-
-function getAirtable() {
-    const url =
-        "https://api.airtable.com/v0/appvXxGyx3prUgKd3/Content%20pipeline?api_key=" +
-        process.env.GATSBY_AIRTABLE_API
-    return fetch(url).then(res => res.json())
-}
 
 const getBadge = status => {
     let color = ""
@@ -176,43 +169,62 @@ const Placeholder = () => (
 const placeholders = Array(8).fill(<Placeholder />)
 
 const Events = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allAirtable(filter: { table: { eq: "Content pipeline" } }) {
+                edges {
+                    node {
+                        data {
+                            Date
+                            Description
+                            Name
+                            Email
+                            Status
+                            URL
+                            Thumbnail {
+                                url
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
     const [events, setEvents] = useState([])
     const [loading, setLoading] = useState(true)
-    useEffect(() => {
-        // Gets airtable data then sorts based on date
-        getAirtable().then(data => {
-            var events = data["records"].map(event => ({
-                component: (
-                    <Event
-                        title={event.fields.Name}
-                        desc={event.fields.Description}
-                        status={event.fields.Status}
-                        img={
-                            event.fields.hasOwnProperty("Thumbnail")
-                                ? event.fields.Thumbnail[0].url
-                                : null
-                        }
-                        link={event.fields.URL}
-                        date={
-                            event.fields.Date === undefined
-                                ? "00-00-00"
-                                : event.fields.Date
-                        }
-                    />
-                ),
-                date:
-                    event.fields.Date === undefined
-                        ? "00-00-00"
-                        : event.fields.Date,
-            }))
-            // Sort lexicographically based on date
-            events.sort((a, b) => b.date.localeCompare(a.date))
-            // Retrieve component from object
-            events = events.map(event => event.component)
-            setEvents(events)
-            setLoading(false)
-        })
-    })
+    // Gets airtable data then sorts based on date
+    if (loading) {
+        var qldata = data["allAirtable"]["edges"].map(event => ({
+            component: (
+                <Event
+                    title={event.node.data.Name}
+                    desc={event.node.data.Description}
+                    status={event.node.data.Status}
+                    img={
+                        event.node.data.hasOwnProperty("Thumbnail")
+                            ? event.node.data.Thumbnail[0].url
+                            : null
+                    }
+                    link={event.node.data.URL}
+                    date={
+                        event.node.data.Date === undefined
+                            ? "00-00-00"
+                            : event.node.data.Date
+                    }
+                />
+            ),
+            date:
+                event.node.data.Date === undefined
+                    ? "00-00-00"
+                    : event.node.data.Date,
+        }))
+        // Sort lexicographically based on date
+        qldata.sort((a, b) => b.date.localeCompare(a.date))
+        // Retrieve component from object
+        qldata = qldata.map(event => event.component)
+        setEvents(qldata)
+        setLoading(false)
+    }
     return (
         <Box backgroundColor="white">
             <SEO title="MYAC | Events" />
