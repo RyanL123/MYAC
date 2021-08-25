@@ -1,6 +1,6 @@
 const path = require(`path`)
 require("dotenv").config({
-    path: `.env.${process.env.NODE_ENV}`,
+    path: `.env`,
 })
 
 module.exports = {
@@ -15,15 +15,15 @@ module.exports = {
         {
             resolve: `gatsby-source-airtable`,
             options: {
-                apiKey: process.env.GATSBY_AIRTABLE_API,
+                apiKey: process.env.AIRTABLE_API_KEY,
                 concurrency: 5,
                 tables: [
                     {
-                        baseId: `appvXxGyx3prUgKd3`,
+                        baseId: `appJ80ZqYPRkpXMCk`,
                         tableName: `Content pipeline`,
                     },
                     {
-                        baseId: `appvXxGyx3prUgKd3`,
+                        baseId: `appJ80ZqYPRkpXMCk`,
                         tableName: `Councils`,
                     },
                 ],
