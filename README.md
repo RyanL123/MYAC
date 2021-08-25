@@ -8,7 +8,7 @@
   MYAC Website
 </h1>
 
-Website for the Mississauga Youth Action Committee. For more information visit [https://themyac.netlify.app/](https://themyac.netlify.app/)
+Website for the Mississauga Youth Action Committee. For more information visit [https://themyac.netlify.app/](https://themyac-22.netlify.app/)
 
 ## Built With
 
