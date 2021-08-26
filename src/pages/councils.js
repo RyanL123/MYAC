@@ -124,6 +124,7 @@ const Events = () => {
                                 url
                             }
                             Email
+                            URL
                         }
                     }
                 }
