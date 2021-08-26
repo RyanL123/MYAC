@@ -1,8 +1,9 @@
 import React from "react"
-import { Box, Text, Button } from "@chakra-ui/core"
-import { Link, useStaticQuery } from "gatsby"
+import { Box, Text, Button } from "@chakra-ui/react"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Title from "./Title"
 import Img from "gatsby-image"
+import { ArrowForwardIcon } from "@chakra-ui/icons"
 
 const Connects = () => {
     const { connects } = useStaticQuery(graphql`
@@ -67,8 +68,8 @@ const Connects = () => {
                 <Box mt="30px">
                     <Link to="/events">
                         <Button
-                            variantColor="blue"
-                            rightIcon="arrow-forward"
+                            colorScheme="blue"
+                            rightIcon={<ArrowForwardIcon />}
                             fontSize="18px"
                             variant="outline"
                             height="50px"

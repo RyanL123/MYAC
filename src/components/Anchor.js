@@ -1,11 +1,11 @@
 import React from "react"
-import { PseudoBox, Text } from "@chakra-ui/core"
+import { Box, Text } from "@chakra-ui/react"
 import { IsMobile } from "./MediaQueries"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const Anchor = ({ name, url }) => (
     <AnchorLink href={url}>
-        <PseudoBox
+        <Box
             color="black.900"
             mx={IsMobile() ? "30px" : "20px"}
             my={IsMobile() ? "10px" : "0px"}
@@ -13,7 +13,7 @@ const Anchor = ({ name, url }) => (
             _hover={{ color: "blue.300" }}
         >
             <Text fontWeight="500">{name}</Text>
-        </PseudoBox>
+        </Box>
     </AnchorLink>
 )
 

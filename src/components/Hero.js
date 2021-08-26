@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Button } from "@chakra-ui/core"
+import { Box, Heading, Button } from "@chakra-ui/react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
@@ -69,7 +69,7 @@ const Hero = () => {
                     <Box my={["25px", "50px"]}>
                         <Link to="/team">
                             <Button
-                                variantColor="blue"
+                                colorScheme="blue"
                                 fontSize="18px"
                                 variant="solid"
                                 height="50px"

@@ -1,7 +1,6 @@
 import React from "react"
 import {
     Box,
-    PseudoBox,
     Text,
     Drawer,
     DrawerBody,
@@ -11,7 +10,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
     useDisclosure,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import { HamburgerIcon } from "@chakra-ui/icons"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
@@ -21,7 +20,7 @@ import "../styles.css"
 
 const NavItem = ({ name, url }) => (
     <Link to={url} activeClassName="active">
-        <PseudoBox
+        <Box
             color="black.900"
             mx="20px"
             my={IsMobile() ? "10px" : "0px"}
@@ -29,7 +28,7 @@ const NavItem = ({ name, url }) => (
             _hover={{ color: "blue.300" }}
         >
             <Text fontWeight="500">{name}</Text>
-        </PseudoBox>
+        </Box>
     </Link>
 )
 

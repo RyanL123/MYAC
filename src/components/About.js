@@ -1,17 +1,18 @@
 import React from "react"
-import { Box, Text, Heading, Button } from "@chakra-ui/core"
+import { Box, Text, Heading, Button } from "@chakra-ui/react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import igBlack from "../assets/ig-black.svg"
+import { ArrowBackIcon } from "@chakra-ui/icons"
 
 export default ({ name, position, bio, img, email, ig }) => (
     <Box px="10vw" py="100px" backgroundColor="white">
         <Box>
             <Link to="/team">
                 <Button
-                    variantColor="blue"
+                    colorScheme="blue"
                     variant="link"
-                    leftIcon="arrow-back"
+                    leftIcon={<ArrowBackIcon />}
                     fontSize="18px"
                 >
                     Back

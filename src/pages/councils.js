@@ -16,10 +16,13 @@ import {
     PopoverFooter,
     PopoverArrow,
     PopoverCloseButton,
-} from "@chakra-ui/core"
+    Flex,
+    Spacer,
+} from "@chakra-ui/react"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 
 const Event = ({ title, desc, img, link, contact }) => (
     <Box
@@ -64,8 +67,8 @@ const Event = ({ title, desc, img, link, contact }) => (
             <Box mt="10px">
                 <Button
                     variant="link"
-                    variantColor="blue"
-                    rightIcon="external-link"
+                    colorScheme="blue"
+                    rightIcon={<ExternalLinkIcon />}
                 >
                     <a
                         href={link}
@@ -172,6 +175,7 @@ const Events = () => {
                     {loading ? placeholders : events}
                 </Box>
             </Box>
+
             <Footer />
         </Box>
     )
