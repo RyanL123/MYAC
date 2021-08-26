@@ -29,7 +29,7 @@ module.exports = {
                 ],
             },
         },
-        `gatsby-plugin-chakra-ui`,
+        `@chakra-ui/gatsby-plugin`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,

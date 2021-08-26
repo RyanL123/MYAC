@@ -8,10 +8,11 @@ import {
     Image,
     Button,
     Skeleton,
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { ExternalLinkIcon } from "@chakra-ui/icons"
 
 const getBadge = status => {
     let color = ""
@@ -28,7 +29,7 @@ const getBadge = status => {
         default:
             break
     }
-    return <Badge variantColor={color}>{status}</Badge>
+    return <Badge colorScheme={color}>{status}</Badge>
 }
 
 const parseDate = date => {
@@ -131,8 +132,8 @@ const Event = ({ title, desc, status, img, link, date }) => (
             <Box>
                 <Button
                     variant="link"
-                    variantColor="blue"
-                    rightIcon="external-link"
+                    colorScheme="blue"
+                    rightIcon={<ExternalLinkIcon />}
                     mt="10px"
                 >
                     <a

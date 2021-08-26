@@ -1,7 +1,7 @@
 import React from "react"
-import { Box, Text, Button } from "@chakra-ui/core"
+import { Box, Text, Button } from "@chakra-ui/react"
 import Title from "./Title"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Summary = () => {
@@ -55,7 +55,7 @@ const Summary = () => {
                         rel="noopener noreferrer"
                     >
                         <Button
-                            variantColor="blue"
+                            colorScheme="blue"
                             fontSize="18px"
                             variant="outline"
                             height="50px"

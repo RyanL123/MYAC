@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading } from "@chakra-ui/core"
+import { Box, Heading } from "@chakra-ui/react"
 
 export default ({ title, subtitle, align, subColor, color }) => (
     <Box textAlign={align}>

@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/react"
 
 export default ({ c1, c2, c3, bg }) => (
     <Box backgroundColor={bg}>

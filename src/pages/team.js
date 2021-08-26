@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, PseudoBox } from "@chakra-ui/core"
+import { Box, Heading } from "@chakra-ui/react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
@@ -176,7 +176,7 @@ const Team = () => {
                                     alignItems="center"
                                     width="100%"
                                 >
-                                    <PseudoBox
+                                    <Box
                                         width={["80vw", null, "300px", null]}
                                         height={["80vw", null, "300px", null]}
                                         overflow="hidden"
@@ -204,7 +204,7 @@ const Team = () => {
                                                 alt={person.name}
                                             />
                                         </button>
-                                    </PseudoBox>
+                                    </Box>
                                     <Heading
                                         color="black.900"
                                         size="lg"

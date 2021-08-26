@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/react"
 import { graphql, useStaticQuery } from "gatsby"
 import SEO from "../../components/SEO"
 import Navbar from "../../components/Navbar"
