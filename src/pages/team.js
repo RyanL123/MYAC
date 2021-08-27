@@ -21,7 +21,7 @@ const Team = () => {
         shirley,
     } = useStaticQuery(graphql`
         query {
-            team: file(relativePath: { eq: "hero.jpg" }) {
+            team: file(relativePath: { eq: "landscape.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 1920, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
