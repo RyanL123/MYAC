@@ -19,6 +19,7 @@ const Team = () => {
         hannah,
         nidhi,
         shirley,
+        peopleData
     } = useStaticQuery(graphql`
         query {
             team: file(relativePath: { eq: "landscape.jpg" }) {
@@ -77,8 +78,36 @@ const Team = () => {
                     }
                 }
             }
+
+            peopleData: allAirtable(filter: {table: {eq: "Team"}}) {
+                nodes {
+                  data {
+                    Name
+                    Position
+                    Avatar {
+                      url
+                    }
+                    Rank
+                    Route
+                  }
+                }
+              }
         }
     `)
+
+    // Parse data to fit previous model and sort to ranking
+    const people2 = peopleData.nodes.map(
+        (node) => ({
+            name: node.data.Name,
+            position: node.data.Position,
+            img: node.data.Avatar ? node.data.Avatar[0].url : null, // Have to do this because avatar can be null
+            route: node.data.Route,
+            rank: node.data.Rank
+        })
+    ).sort(
+        (data1, data2) => data1.rank - data2.rank
+    );
+
     const people = [
         {
             name: "Shirley Mu",
@@ -124,6 +153,7 @@ const Team = () => {
             route: "nidhi",
         },
     ]
+
     return (
         <Box backgroundColor="white">
             <SEO title="MYAC | Team" />

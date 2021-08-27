@@ -26,6 +26,10 @@ module.exports = {
                         baseId: `appJ80ZqYPRkpXMCk`,
                         tableName: `Councils`,
                     },
+                    {
+                        baseId: `appJ80ZqYPRkpXMCk`,
+                        tableName: `Team`,
+                    },
                 ],
             },
         },
