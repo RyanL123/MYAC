@@ -29,6 +29,9 @@ module.exports = {
                     {
                         baseId: `appJ80ZqYPRkpXMCk`,
                         tableName: `Team`,
+                        mapping: {
+                            Avatar: `fileNode`
+                        }
                     },
                 ],
             },
@@ -37,5 +40,6 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-image`
     ],
 }

@@ -1,7 +1,6 @@
 import React from "react"
 import { Box, Heading } from "@chakra-ui/react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
 import Title from "../components/Title"
 import SEO from "../components/SEO"
@@ -9,73 +8,22 @@ import Navbar from "../components/Navbar"
 import Anchor from "../components/Anchor"
 import Footer from "../components/Footer"
 
+import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image"
+import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from "gatsby-background-image"
+
 const Team = () => {
     const {
         team,
-        alyssa,
-        ben,
-        claire,
-        daniel,
-        hannah,
-        nidhi,
-        shirley,
         peopleData
     } = useStaticQuery(graphql`
         query {
             team: file(relativePath: { eq: "landscape.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 1920, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            alyssa: file(relativePath: { eq: "alyssa.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 700, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            ben: file(relativePath: { eq: "ben.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 700, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            claire: file(relativePath: { eq: "claire.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 700, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            daniel: file(relativePath: { eq: "daniel.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 700, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            hannah: file(relativePath: { eq: "hannah.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 700, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            nidhi: file(relativePath: { eq: "nidhi.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 700, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            shirley: file(relativePath: { eq: "shirley.jpg" }) {
-                childImageSharp {
-                    fluid(maxHeight: 700, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(
+                        width: 1920
+                        placeholder: BLURRED
+                    )
                 }
             }
 
@@ -85,8 +33,13 @@ const Team = () => {
                     Name
                     Position
                     Avatar {
-                      url
-                    }
+                        id
+                        localFiles {
+                          childImageSharp {
+                            gatsbyImageData(height: 700, quality: 100, placeholder: BLURRED)
+                          }
+                        }
+                      }
                     Rank
                     Route
                   }
@@ -96,63 +49,17 @@ const Team = () => {
     `)
 
     // Parse data to fit previous model and sort to ranking
-    const people2 = peopleData.nodes.map(
+    const people = peopleData.nodes.map(
         (node) => ({
             name: node.data.Name,
             position: node.data.Position,
-            img: node.data.Avatar ? node.data.Avatar[0].url : null, // Have to do this because avatar can be null
+            img: node.data.Avatar.localFiles[0].childImageSharp.gatsbyImageData,
             route: node.data.Route,
             rank: node.data.Rank
         })
     ).sort(
         (data1, data2) => data1.rank - data2.rank
     );
-
-    const people = [
-        {
-            name: "Shirley Mu",
-            position: "Chairperson",
-            img: shirley,
-            route: "shirley",
-        },
-        {
-            name: "Daniel Ojeda",
-            position: "Vice Chairperson",
-            img: daniel,
-            route: "daniel",
-        },
-        {
-            name: "Alyssa Guo",
-            position: "Director of External Communication",
-            img: alyssa,
-            route: "alyssa",
-        },
-        {
-            name: "Benjamin Zhang",
-            position: "Director of Administrations",
-            img: ben,
-            route: "benjamin",
-        },
-        {
-            name: "Claire Shen",
-            position: "Director of Membership Affairs",
-            img: claire,
-            route: "claire",
-        },
-
-        {
-            name: "Hannah Mahr",
-            position: "Director of Finance",
-            img: hannah,
-            route: "hannah",
-        },
-        {
-            name: "Nidhi Vasani",
-            position: "Director of Promotions",
-            img: nidhi,
-            route: "nidhi",
-        },
-    ]
 
     return (
         <Box backgroundColor="white">
@@ -165,15 +72,10 @@ const Team = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <BackgroundImage
-                    fluid={team.childImageSharp.fluid}
-                    style={{
-                        height: "100%",
-                        width: "100%",
-                        backgroundPosition: "center top",
-                    }}
-                    alt="Team Image"
-                ></BackgroundImage>
+                <GatsbyImage image={getImage(team)} alt={"Team Image"} style={{
+                    backgroundPosition: "center top",
+                    height: "100%"
+                }} />
             </Box>
             <Box px="10vw" py="100px">
                 <Title
@@ -222,6 +124,7 @@ const Team = () => {
                                                 height: "100%",
                                             }}
                                         >
+                                            {/*
                                             <Img
                                                 fluid={
                                                     person.img.childImageSharp
@@ -232,6 +135,30 @@ const Team = () => {
                                                     height: "100%",
                                                 }}
                                                 alt={person.name}
+                                            />
+                                            
+
+                                            <StaticImage
+                                                src={person.img}
+                                                alt={person.name}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%"
+                                                }}
+                                                placeholder="blurred"
+                                                layout="fixed"
+                                                height={700}
+                                                width={500}
+                                            />
+                                            */}
+
+                                            <GatsbyImage
+                                                image={person.img}
+                                                alt={person.name}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%"
+                                                }}
                                             />
                                         </button>
                                     </Box>
