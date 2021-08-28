@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 import igBlack from "../assets/ig-black.svg"
 import { ArrowBackIcon } from "@chakra-ui/icons"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default ({ name, position, bio, img, email, ig }) => (
     <Box px="10vw" py="100px" backgroundColor="white">
@@ -36,8 +37,9 @@ export default ({ name, position, bio, img, email, ig }) => (
                     overflow="hidden"
                     boxShadow="lg"
                 >
-                    <Img
-                        fluid={img.childImageSharp.fluid}
+
+                    <GatsbyImage
+                        image={img}
                         style={{ width: "100%", height: "100%" }}
                     />
                 </Box>
