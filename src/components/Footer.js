@@ -1,45 +1,13 @@
 import React from "react"
 import { Box } from "@chakra-ui/react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Footer = () => {
-    const { logo, fb, ig, twitter } = useStaticQuery(graphql`
-        query {
-            logo: file(relativePath: { eq: "logo.png" }) {
-                childImageSharp {
-                    fixed(height: 30, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-            fb: file(relativePath: { eq: "fb.png" }) {
-                childImageSharp {
-                    fixed(height: 30, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-            ig: file(relativePath: { eq: "ig.png" }) {
-                childImageSharp {
-                    fixed(height: 30, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-            twitter: file(relativePath: { eq: "twitter.png" }) {
-                childImageSharp {
-                    fixed(height: 30, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-        }
-    `)
     return (
         <Box backgroundColor="blue.800" px="10vw" py="50px" textAlign="center">
             <Link to="/" aria-label="Logo">
-                <Img fixed={logo.childImageSharp.fixed} />
+                <StaticImage src="../assets/logo.png" height={30} quality={100} placeholder="blurred" />
             </Link>
             <Box
                 display="flex"
@@ -56,7 +24,7 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         aria-label="Instagram"
                     >
-                        <Img fixed={ig.childImageSharp.fixed} />
+                        <StaticImage src="../assets/ig.png" height={30} quality={100} placeholder="blurred" />
                     </a>
                 </Box>
                 <Box mx="20px">
@@ -66,7 +34,7 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         aria-label="Facebook"
                     >
-                        <Img fixed={fb.childImageSharp.fixed} />
+                        <StaticImage src="../assets/fb.png" height={30} quality={100} placeholder="blurred" />
                     </a>
                 </Box>
                 <Box mx="20px">
@@ -76,7 +44,7 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         aria-label="Twitter"
                     >
-                        <Img fixed={twitter.childImageSharp.fixed} />
+                        <StaticImage src="../assets/twitter.png" height={30} quality={100} placeholder="blurred" />
                     </a>
                 </Box>
             </Box>

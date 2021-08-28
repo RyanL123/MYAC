@@ -1,28 +1,27 @@
 import React from "react"
 import { Box, Heading, Button } from "@chakra-ui/react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
-import BackgroundImage from "gatsby-background-image"
+import { BgImage } from "gbimage-bridge"
+import { getImage, StaticImage } from "gatsby-plugin-image"
 
 const Hero = () => {
-    const { hero, logo } = useStaticQuery(graphql`
+    let { hero } = useStaticQuery(graphql`
         query {
             hero: file(relativePath: { eq: "landscape.jpg" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-            logo: file(relativePath: { eq: "logo.png" }) {
-                childImageSharp {
-                    fluid(maxHeight: 100, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData (
+                        width: 2000,
+                        quality: 100,
+                        placeholder: BLURRED,
+                        formats: [AUTO, WEBP, AVIF]
+                    )
                 }
             }
         }
     `)
+
+    hero = getImage(hero);
+
     return (
         <Box
             height="100vh"
@@ -31,8 +30,8 @@ const Hero = () => {
             justifyContent="center"
             alignItems="center"
         >
-            <BackgroundImage
-                fluid={hero.childImageSharp.fluid}
+            <BgImage
+                image={hero}
                 style={{
                     height: "100%",
                     width: "100%",
@@ -52,7 +51,7 @@ const Hero = () => {
                     px="10px"
                 >
                     <Box width={["100px", "200px"]}>
-                        <Img fluid={logo.childImageSharp.fluid} />
+                        <StaticImage src="../assets/logo.png" placeholder="tracedSVG" />
                     </Box>
                     <Heading
                         color="white"
@@ -79,7 +78,7 @@ const Hero = () => {
                         </Link>
                     </Box>
                 </Box>
-            </BackgroundImage>
+            </BgImage>
         </Box>
     )
 }

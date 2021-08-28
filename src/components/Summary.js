@@ -2,7 +2,7 @@ import React from "react"
 import { Box, Text, Button } from "@chakra-ui/react"
 import Title from "./Title"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Summary = () => {
     const { summary } = useStaticQuery(graphql`
@@ -72,7 +72,7 @@ const Summary = () => {
                 borderRadius="10px"
                 overflow="hidden"
             >
-                <Img fluid={summary.childImageSharp.fluid} alt="team" />
+                <StaticImage src="../assets/summary.jpg" alt="Team" placeholder="blurred" />
             </Box>
         </Box>
     )

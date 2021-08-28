@@ -1,16 +1,14 @@
 import React from "react"
 import { Box, Heading } from "@chakra-ui/react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
+
 import Title from "../components/Title"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
-import Anchor from "../components/Anchor"
 import Footer from "../components/Footer"
 
-import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image"
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from "gatsby-background-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { BgImage } from "gbimage-bridge"
 
 const Team = () => {
     const {
@@ -21,8 +19,9 @@ const Team = () => {
             team: file(relativePath: { eq: "landscape.jpg" }) {
                 childImageSharp {
                     gatsbyImageData(
-                        width: 1920
-                        placeholder: BLURRED
+                        width: 1920,
+                        placeholder: BLURRED,
+                        quality: 100
                     )
                 }
             }
@@ -72,10 +71,15 @@ const Team = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <GatsbyImage image={getImage(team)} alt={"Team Image"} style={{
-                    backgroundPosition: "center top",
-                    height: "100%"
-                }} />
+                <BgImage
+                    image={getImage(team)}
+                    style={{
+                        height: "100%",
+                        width: "100%",
+                        backgroundPosition: "center top",
+                    }}
+                    alt="Hero Image"
+                ></BgImage>
             </Box>
             <Box px="10vw" py="100px">
                 <Title

@@ -12,11 +12,11 @@ import {
     useDisclosure,
 } from "@chakra-ui/react"
 import { HamburgerIcon } from "@chakra-ui/icons"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
 import Headroom from "react-headroom"
 import { Mobile, Desktop, IsMobile } from "./MediaQueries"
 import "../styles.css"
+import { StaticImage } from "gatsby-plugin-image"
 
 const NavItem = ({ name, url }) => (
     <Link to={url} activeClassName="active">
@@ -33,38 +33,6 @@ const NavItem = ({ name, url }) => (
 )
 
 const Navbar = ({ children }) => {
-    const { logo, fb, ig, twitter } = useStaticQuery(graphql`
-        query {
-            logo: file(relativePath: { eq: "logo.png" }) {
-                childImageSharp {
-                    fixed(height: 30, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-            fb: file(relativePath: { eq: "fb.png" }) {
-                childImageSharp {
-                    fixed(height: 28, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-            ig: file(relativePath: { eq: "ig.png" }) {
-                childImageSharp {
-                    fixed(height: 28, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-            twitter: file(relativePath: { eq: "twitter.png" }) {
-                childImageSharp {
-                    fixed(height: 28, quality: 100) {
-                        ...GatsbyImageSharpFixed_withWebp
-                    }
-                }
-            }
-        }
-    `)
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <>
@@ -89,7 +57,7 @@ const Navbar = ({ children }) => {
                         boxShadow="inset 0 -1px 0 0 rgba(0,0,0,0.1);"
                     >
                         <Link to="/" aria-label="Logo">
-                            <Img fixed={logo.childImageSharp.fixed} />
+                            <StaticImage src="../assets/logo.png" height={30} quality={100} placeholder="blurred" alt="Logo" />
                         </Link>
                         <Box
                             display="flex"
@@ -118,7 +86,7 @@ const Navbar = ({ children }) => {
                                     display="flex"
                                     alignContent="center"
                                 >
-                                    <Img fixed={ig.childImageSharp.fixed} />
+                                    <StaticImage src="../assets/ig.png" height={28} quality={100} placeholder="blurred" alt="Instagram" />
                                 </Box>
                             </a>
                             <a
@@ -132,7 +100,7 @@ const Navbar = ({ children }) => {
                                     display="flex"
                                     alignContent="center"
                                 >
-                                    <Img fixed={fb.childImageSharp.fixed} />
+                                    <StaticImage src="../assets/fb.png" height={28} quality={100} placeholder="blurred" alt="Instagram" />
                                 </Box>
                             </a>
                             <a
@@ -146,9 +114,7 @@ const Navbar = ({ children }) => {
                                     display="flex"
                                     alignContent="center"
                                 >
-                                    <Img
-                                        fixed={twitter.childImageSharp.fixed}
-                                    />
+                                    <StaticImage src="../assets/twitter.png" height={28} quality={100} placeholder="blurred" alt="Instagram" />
                                 </Box>
                             </a>
                         </Box>
@@ -176,7 +142,7 @@ const Navbar = ({ children }) => {
                         boxShadow="inset 0 -1px 0 0 rgba(0,0,0,0.1);"
                     >
                         <Link to="/" aria-label="Logo">
-                            <Img fixed={logo.childImageSharp.fixed} />
+                            <StaticImage src="../assets/logo.png" height={30} quality={100} placeholder="blurred" alt="Logo" />
                         </Link>
                         <HamburgerIcon
                             w={6}
@@ -190,11 +156,7 @@ const Navbar = ({ children }) => {
                                     <DrawerCloseButton />
                                     <DrawerHeader>
                                         <Link to="/">
-                                            <Img
-                                                fixed={
-                                                    logo.childImageSharp.fixed
-                                                }
-                                            />
+                                            <StaticImage src="../assets/logo.png" height={28} quality={100} placeholder="blurred" alt="Logo" />
                                         </Link>
                                     </DrawerHeader>
                                     <DrawerBody>
@@ -235,12 +197,7 @@ const Navbar = ({ children }) => {
                                                     display="flex"
                                                     alignContent="center"
                                                 >
-                                                    <Img
-                                                        fixed={
-                                                            ig.childImageSharp
-                                                                .fixed
-                                                        }
-                                                    />
+                                                    <StaticImage src="../assets/ig.png" height={28} quality={100} placeholder="blurred" alt="Instagram" />
                                                 </Box>
                                             </a>
                                             <a
@@ -254,12 +211,7 @@ const Navbar = ({ children }) => {
                                                     display="flex"
                                                     alignContent="center"
                                                 >
-                                                    <Img
-                                                        fixed={
-                                                            fb.childImageSharp
-                                                                .fixed
-                                                        }
-                                                    />
+                                                    <StaticImage src="../assets/fb.png" height={28} quality={100} placeholder="blurred" alt="Instagram" />
                                                 </Box>
                                             </a>
                                             <a
@@ -273,13 +225,7 @@ const Navbar = ({ children }) => {
                                                     display="flex"
                                                     alignContent="center"
                                                 >
-                                                    <Img
-                                                        fixed={
-                                                            twitter
-                                                                .childImageSharp
-                                                                .fixed
-                                                        }
-                                                    />
+                                                    <StaticImage src="../assets/twitter.png" height={28} quality={100} placeholder="blurred" alt="Instagram" />
                                                 </Box>
                                             </a>
                                         </Box>
