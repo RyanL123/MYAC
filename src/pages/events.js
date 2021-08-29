@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import {
     Box,
@@ -8,6 +8,8 @@ import {
     Image,
     Button,
     Skeleton,
+    Checkbox,
+    Flex
 } from "@chakra-ui/react"
 import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
@@ -191,46 +193,53 @@ const Events = () => {
             }
         }
     `)
+
     const [events, setEvents] = useState([])
     const [loading, setLoading] = useState(true)
-    // Gets airtable data then sorts based on date
-    if (loading) {
-        var qldata = data["allAirtable"]["edges"].map(event => ({
-            component: (
-                <Event
-                    title={event.node.data.Name}
-                    desc={event.node.data.Description}
-                    status={event.node.data.Status}
-                    img={
-                        event.node.data.hasOwnProperty("Thumbnail")
-                            ? event.node.data.Thumbnail[0].url
-                            : null
-                    }
-                    link={event.node.data.URL}
-                    date={
-                        event.node.data.Date === undefined
-                            ? "00-00-00"
-                            : event.node.data.Date
-                    }
-                />
-            ),
-            date:
-                event.node.data.Date === undefined
-                    ? "00-00-00"
-                    : event.node.data.Date,
+    const [showPastEvents, setShowPastEvents] = useState(false);
+
+    useEffect(() => {
+        // Gets airtable data then sorts based on date
+        var myQldata = data["allAirtable"]["edges"].map(event => ({
+            title: event.node.data.Name,
+            desc: event.node.data.Description,
+            status: event.node.data.Status,
+            img: event.node.data.hasOwnProperty("Thumbnail")
+                ? event.node.data.Thumbnail[0].url
+                : null,
+            link: event.node.data.URL,
+            date: event.node.data.Date === undefined
+                ? "00-00-00"
+                : event.node.data.Date,
+            past: event.node.data.Status === "Concluded"
         }))
         // Sort lexicographically based on date
-        qldata.sort((a, b) => b.date.localeCompare(a.date))
-        // Retrieve component from object
-        qldata = qldata.map(event => event.component)
-        setEvents(qldata)
+        myQldata.sort((a, b) => b.date.localeCompare(a.date))
+
+        // Filter to show past events or not
+        myQldata = myQldata.filter(({ past }) => showPastEvents ? true : !past);
+
+        setEvents(myQldata)
         setLoading(false)
-    }
+    }, [showPastEvents])
+
     return (
         <Box backgroundColor="white">
             <SEO title="MYAC | Events" />
             <Navbar />
-            <Box px="10vw" py="100px">
+            <Flex px="10vw" py="100px" direction="column" alignItems="center">
+                <Checkbox
+                    mb="4"
+                    size="lg"
+                    isChecked={showPastEvents}
+                    onChange={
+                        (e) => {
+                            setShowPastEvents(e.target.checked)
+                        }}
+                >
+                    Include Past Events
+                </Checkbox>
+
                 <Box
                     display="grid"
                     gridTemplateColumns={[
@@ -243,9 +252,42 @@ const Events = () => {
                     gridColumnGap={5}
                     gridRowGap={5}
                 >
-                    {loading ? placeholders : events}
+                    {loading ? placeholders : events.map(event => (
+                        <Event
+                            title={event.title}
+                            desc={event.desc}
+                            status={event.status}
+                            img={event.img}
+                            link={event.link}
+                            date={event.date}
+                        />
+                    ))}
+
+                    {
+                        !events.length &&
+                        <Flex mt="4" flexDirection="column" alignItems="center" gridGap="4">
+                            <Heading
+                                size="2xl"
+                                color="gray.600"
+                                fontWeight="medium"
+                                textAlign="center"
+                            >
+                                No upcoming events found
+                            </Heading>
+
+                            <Heading
+                                size="md"
+                                color="gray.600"
+                                fontWeight="normal"
+                                width="50%"
+                                textAlign="center"
+                            >
+                                Sorry, there seem to be no upcoming events as of now. Try including past events to see past events, or come back later to find new events by MYAC!
+                            </Heading>
+                        </Flex>
+                    }
                 </Box>
-            </Box>
+            </Flex>
             <Footer />
         </Box>
     )
