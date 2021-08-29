@@ -81,7 +81,10 @@ const Event = ({ title, desc, img, link, contact }) => (
                 </Button>
                 <Popover>
                     <PopoverTrigger>
-                        <Button ml="20px">Contact</Button>
+                        <Button ml="20px" backgroundColor="blue.400" color="white" _hover={{
+                            background: "blue.600",
+                            color: "white"
+                        }}>Contact</Button>
                     </PopoverTrigger>
                     <PopoverContent zIndex={4} width="500px">
                         <PopoverArrow />
