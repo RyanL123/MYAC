@@ -15,6 +15,7 @@ import SEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
+import { Link } from "gatsby"
 
 const getBadge = status => {
     let color = ""
@@ -138,14 +139,27 @@ const Event = ({ title, desc, status, img, link, date }) => (
                     rightIcon={<ExternalLinkIcon />}
                     mt="10px"
                 >
-                    <a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Learn More"
-                    >
-                        Learn More
-                    </a>
+                    {link[0] === "/" ? (
+                        <Link
+                            to={link}
+                        >
+                            <a
+                                aria-label="Learn More"
+                            >
+                                Learn More
+                            </a>
+                        </Link>
+                    )
+                        : (
+                            <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Learn More"
+                            >
+                                Learn More
+                            </a>)
+                    }
                 </Button>
             </Box>
         </Box>
