@@ -68,6 +68,7 @@ const Navbar = ({ children }) => {
                             {children}
                             <NavItem name="Team" url="/team" />
                             <NavItem name="Events" url="/events" />
+                            <NavItem name="Past Events" url="/past-events" />
                             <NavItem name="Councils" url="/councils" />
                         </Box>
                         <Box
@@ -168,14 +169,9 @@ const Navbar = ({ children }) => {
                                             <NavItem name="Home" url="/" />
                                             {children}
                                             <NavItem name="Team" url="/team" />
-                                            <NavItem
-                                                name="Events"
-                                                url="/events"
-                                            />
-                                            <NavItem
-                                                name="Councils"
-                                                url="/councils"
-                                            />
+                                            <NavItem name="Events" url="/events" />
+                                            <NavItem name="Past Events" url="/past-events" />
+                                            <NavItem name="Councils" url="/councils" />
                                         </Box>
                                     </DrawerBody>
                                     <DrawerFooter>

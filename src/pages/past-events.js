@@ -229,8 +229,8 @@ const Events = () => {
         // Sort lexicographically based on date
         myQldata.sort((a, b) => b.date.localeCompare(a.date))
 
-        // Filter to show upcoming events
-        myQldata = myQldata.filter(({ past }) => !past);
+        // Filter to only show past events
+        myQldata = myQldata.filter(({ past }) => past);
 
         setEvents(myQldata)
         setLoading(false)
@@ -283,18 +283,7 @@ const Events = () => {
                                 width="50%"
                                 textAlign="center"
                             >
-                                Sorry, there seem to be no upcoming events as of now.
-                                Try clicking
-                                {" "}
-                                <Link to="/past-events">
-                                    <Button variant="link" colorScheme="blue">
-                                        <Heading size="md" fontWeight="normal">
-                                            here
-                                        </Heading>
-                                    </Button>
-                                </Link>
-                                {" "}
-                                to view past events, or come back later to find new events by MYAC!
+                                Sorry, there seem to be no upcoming events as of now. Try including past events to see past events, or come back later to find new events by MYAC!
                             </Heading>
                         </Flex>
                     }
