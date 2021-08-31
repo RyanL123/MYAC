@@ -165,6 +165,9 @@ const Events = () => {
             <MySEO title="MYAC | Events" />
             <Navbar />
             <Box px="10vw" py="100px">
+                <Heading size="2xl" color="gray.800" mb="8">
+                    MYAC Opportunities Fair - Councils
+                </Heading>
                 <Box
                     display="grid"
                     gridTemplateColumns="repeat(auto-fit, minmax(700px, 1fr))"
