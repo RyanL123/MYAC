@@ -11,8 +11,7 @@ import Footer from "../../components/Footer"
 import Page404 from "../404"
 
 const TeamMember = (props) => {
-    console.log();
-
+    // Only return an about page if data exists
     if (props.data.airtable) {
         const data = props.data.airtable.data;
 

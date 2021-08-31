@@ -1,10 +1,11 @@
 import React from "react"
-import { Flex, Heading, Text } from "@chakra-ui/react"
+import { Link } from "gatsby"
+
+import { Button, Flex, Heading, Text } from "@chakra-ui/react"
+
 import MySEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-
-// TODO: Add button that redirects to homepage
 
 export default function Page404() {
     return (
@@ -24,6 +25,15 @@ export default function Page404() {
                 <Text fontSize="md">
                     Sorry, we can't find the page you're looking for. You can either return to the previous page, or visit the pages in the top bar.
                 </Text>
+
+                <Link to="/">
+                    <Button backgroundColor="blue.400" textColor="white" _hover={{
+                        backgroundColor: "blue.600",
+                        textColor: "white"
+                    }}>
+                        Go Home
+                    </Button>
+                </Link>
             </Flex>
 
             <Footer />
