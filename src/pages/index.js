@@ -1,14 +1,16 @@
 import React from "react"
 import { Box } from "@chakra-ui/react"
-// import Slant from "../components/Slant"
-// import Anchor from "../components/Anchor"
+
 import MySEO from "../components/SEO"
 import Navbar from "../components/Navbar"
-import Hero from "../components/Hero"
-import Objectives from "../components/Objectives"
-import Summary from "../components/Summary"
-import Connects from "../components/Connects"
 import Footer from "../components/Footer"
+
+import Hero from "../components/home/Hero"
+import Objectives from "../components/home/Objectives"
+import Summary from "../components/home/Summary"
+import Connects from "../components/home/Connects"
+// import Slant from "../components/home/Slant"
+// import Anchor from "../components/home/Anchor"
 
 export default function Home() {
     return (

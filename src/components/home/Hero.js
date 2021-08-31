@@ -51,7 +51,7 @@ const Hero = () => {
                     px="10px"
                 >
                     <Box width={["100px", "200px"]}>
-                        <StaticImage src="../assets/logo.png" placeholder="tracedSVG" />
+                        <StaticImage src="../../assets/logo.png" placeholder="tracedSVG" />
                     </Box>
                     <Heading
                         color="white"

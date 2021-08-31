@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Heading, Text } from "@chakra-ui/react"
-import Title from "./Title"
+import Title from "../Title"
 
 const Card = ({ title, content, icon }) => (
     <Box p="32px" maxWidth="450px" textAlign="left">

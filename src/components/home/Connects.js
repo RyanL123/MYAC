@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Text, Button } from "@chakra-ui/react"
 import { Link } from "gatsby"
-import Title from "./Title"
+import Title from "../Title"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
 import { StaticImage } from "gatsby-plugin-image"
 

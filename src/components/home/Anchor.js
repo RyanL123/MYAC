@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Text } from "@chakra-ui/react"
-import { IsMobile } from "./MediaQueries"
+import { IsMobile } from "../MediaQueries"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const Anchor = ({ name, url }) => (

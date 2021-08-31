@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Text, Button } from "@chakra-ui/react"
-import Title from "./Title"
+import Title from "../Title"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Summary = () => {
