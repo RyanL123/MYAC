@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import { Box } from "@chakra-ui/react"
 
-import SEO from "../../components/SEO"
+import MySEO from "../../components/SEO"
 import Navbar from "../../components/Navbar"
 import About from "../../components/About"
 import Footer from "../../components/Footer"
@@ -18,7 +18,7 @@ const TeamMember = (props) => {
 
         return (
             <Box>
-                <SEO title={`About | ${data.Name}`} />
+                <MySEO title={`About | ${data.Name}`} />
                 <Navbar />
                 <About
                     img={data.Avatar.localFiles[0].childImageSharp.gatsbyImageData}

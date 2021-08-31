@@ -1,6 +1,6 @@
 import React from "react"
 import { Flex, Heading, Text } from "@chakra-ui/react"
-import SEO from "../components/SEO"
+import MySEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
@@ -9,7 +9,7 @@ import Footer from "../components/Footer"
 export default function Page404() {
     return (
         <Flex backgroundColor="gray.100" overflow="hidden" direction="column" minH="100vh">
-            <SEO title="MYAC | Home" />
+            <MySEO title="MYAC | 404 Not Found" />
             <Navbar />
 
             <Flex alignSelf="center" justifyContent="center" alignItems="center" direction="column" gridGap="2" mt="20px" flexGrow="1">

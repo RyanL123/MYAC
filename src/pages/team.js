@@ -3,7 +3,8 @@ import { Box, Heading } from "@chakra-ui/react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Title from "../components/Title"
-import SEO from "../components/SEO"
+
+import MySEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
@@ -62,7 +63,7 @@ const Team = () => {
 
     return (
         <Box backgroundColor="white">
-            <SEO title="MYAC | Team" />
+            <MySEO title="MYAC | Team" />
             <Navbar />
             <Box
                 height={["100px", null, "350px", null]}

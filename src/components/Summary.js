@@ -1,21 +1,9 @@
 import React from "react"
 import { Box, Text, Button } from "@chakra-ui/react"
 import Title from "./Title"
-import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Summary = () => {
-    const { summary } = useStaticQuery(graphql`
-        query {
-            summary: file(relativePath: { eq: "summary.jpg" }) {
-                childImageSharp {
-                    fluid(maxWidth: 1920, maxHeight: 1280, quality: 100) {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
-        }
-    `)
     return (
         <Box
             px="10vw"

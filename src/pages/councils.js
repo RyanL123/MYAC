@@ -4,7 +4,6 @@ import {
     Box,
     Heading,
     Text,
-    Badge,
     Image,
     Button,
     Skeleton,
@@ -13,13 +12,10 @@ import {
     PopoverContent,
     PopoverHeader,
     PopoverBody,
-    PopoverFooter,
     PopoverArrow,
     PopoverCloseButton,
-    Flex,
-    Spacer,
 } from "@chakra-ui/react"
-import SEO from "../components/SEO"
+import MySEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
@@ -166,7 +162,7 @@ const Events = () => {
     }
     return (
         <Box backgroundColor="white">
-            <SEO title="MYAC | Events" />
+            <MySEO title="MYAC | Events" />
             <Navbar />
             <Box px="10vw" py="100px">
                 <Box

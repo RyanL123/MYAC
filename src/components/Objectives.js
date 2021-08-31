@@ -34,7 +34,7 @@ const Card = ({ title, content, icon }) => (
     </Box>
 )
 
-export default () => (
+const Objectives = () => (
     <Box px="10vw" py="150px" backgroundColor="white" id="objectives">
         <Title
             title="Our Objectives"
@@ -113,3 +113,5 @@ export default () => (
         </Box>
     </Box>
 )
+
+export default Objectives;

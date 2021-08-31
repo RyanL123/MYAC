@@ -8,10 +8,9 @@ import {
     Image,
     Button,
     Skeleton,
-    Checkbox,
     Flex
 } from "@chakra-ui/react"
-import SEO from "../components/SEO"
+import MySEO from "../components/SEO"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
@@ -143,11 +142,7 @@ const Event = ({ title, desc, status, img, link, date }) => (
                         <Link
                             to={link}
                         >
-                            <a
-                                aria-label="Learn More"
-                            >
-                                Learn More
-                            </a>
+                            Learn More
                         </Link>
                     )
                         : (
@@ -234,11 +229,11 @@ const Events = () => {
 
         setEvents(myQldata)
         setLoading(false)
-    }, [])
+    }, [data])
 
     return (
         <Box backgroundColor="white">
-            <SEO title="MYAC | Events" />
+            <MySEO title="MYAC | Events" />
             <Navbar />
             <Flex px="10vw" py="100px" direction="column" alignItems="center">
                 <Box

@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Heading } from "@chakra-ui/react"
 
-export default ({ title, subtitle, align, subColor, color }) => (
+const Title = ({ title, subtitle, align, subColor, color }) => (
     <Box textAlign={align}>
         <Heading color={subColor} size="md" fontWeight="500">
             {subtitle}
@@ -11,3 +11,5 @@ export default ({ title, subtitle, align, subColor, color }) => (
         </Heading>
     </Box>
 )
+
+export default Title

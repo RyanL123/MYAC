@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-export default ({ title }) => (
+const MySEO = ({ title }) => (
     <Helmet>
         <title>{title}</title>
         <meta
@@ -27,3 +27,5 @@ export default ({ title }) => (
         <html lang="en" />
     </Helmet>
 )
+
+export default MySEO

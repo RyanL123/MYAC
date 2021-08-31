@@ -1,12 +1,11 @@
 import React from "react"
 import { Box, Text, Heading, Button } from "@chakra-ui/react"
-import Img from "gatsby-image"
 import { Link } from "gatsby"
 import igBlack from "../assets/ig-black.svg"
 import { ArrowBackIcon } from "@chakra-ui/icons"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-export default ({ name, position, bio, img, email, ig }) => (
+const About = ({ name, position, bio, img, email, ig }) => (
     <Box px="10vw" py="100px" backgroundColor="white">
         <Box>
             <Link to="/team">
@@ -88,7 +87,7 @@ export default ({ name, position, bio, img, email, ig }) => (
                     </a>
                     <a href={ig} target="_blank" rel="noopener noreferrer">
                         <Box width="16px" height="16px">
-                            <img src={igBlack} />
+                            <img src={igBlack} alt="Instagram" />
                         </Box>
                     </a>
                 </Box>
@@ -114,3 +113,5 @@ export default ({ name, position, bio, img, email, ig }) => (
         </Box>
     </Box>
 )
+
+export default About;
