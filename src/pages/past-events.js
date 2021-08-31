@@ -244,10 +244,8 @@ const Events = () => {
                 <Box
                     display="grid"
                     gridTemplateColumns={[
-                        "repeat(auto-fit, minmax(200px, 1fr))",
                         "repeat(auto-fit, minmax(300px, 1fr))",
-                        "repeat(auto-fit, minmax(300px, 1fr))",
-                        "repeat(auto-fit, minmax(300px, 1fr))",
+                        "repeat(auto-fit, minmax(400px, 1fr))",
                     ]}
                     gridAutoFlow="row"
                     gridColumnGap={5}

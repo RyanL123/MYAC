@@ -69,7 +69,6 @@ const Navbar = ({ children }) => {
                             <NavItem name="Team" url="/team" />
                             <NavItem name="Events" url="/events" />
                             <NavItem name="Past Events" url="/past-events" />
-                            <NavItem name="Councils" url="/councils" />
                         </Box>
                         <Box
                             display="flex"
@@ -171,7 +170,6 @@ const Navbar = ({ children }) => {
                                             <NavItem name="Team" url="/team" />
                                             <NavItem name="Events" url="/events" />
                                             <NavItem name="Past Events" url="/past-events" />
-                                            <NavItem name="Councils" url="/councils" />
                                         </Box>
                                     </DrawerBody>
                                     <DrawerFooter>
