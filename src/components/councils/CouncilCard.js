@@ -44,7 +44,7 @@ export default function Council({ title, desc, img, link, contact }) {
                 height="100%"
             >
                 <Box>
-                    <Heading color="black.900" size="lg">
+                    <Heading color="black.900" size="lg" data-testid="councilcard-title">
                         {title}
                     </Heading>
                     <Box
@@ -53,7 +53,7 @@ export default function Council({ title, desc, img, link, contact }) {
                         alignItems="center"
                         mt="10px"
                     ></Box>
-                    <Text color="gray.500" fontSize="lg" fontWeight="500" mt="10px">
+                    <Text color="gray.500" fontSize="lg" fontWeight="500" mt="10px" data-testid="councilcard-desc">
                         {desc}
                     </Text>
                 </Box>

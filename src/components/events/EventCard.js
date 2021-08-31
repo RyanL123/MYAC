@@ -41,7 +41,7 @@ export default function Event({ title, desc, status, img, link, date }) {
                 height="100%"
             >
                 <Box>
-                    <Heading color="black.900" size="lg">
+                    <Heading color="black.900" size="lg" data-testid="eventcard-title">
                         {title}
                     </Heading>
                     <Box
@@ -60,7 +60,7 @@ export default function Event({ title, desc, status, img, link, date }) {
                             {parseDate(date)}
                         </Text>
                     </Box>
-                    <Text color="gray.500" fontSize="lg" fontWeight="500" mt="10px">
+                    <Text color="gray.500" fontSize="lg" fontWeight="500" mt="10px" data-testid="eventcard-desc">
                         {desc}
                     </Text>
                 </Box>
@@ -84,6 +84,7 @@ export default function Event({ title, desc, status, img, link, date }) {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Learn More"
+                                    data-testid="eventcard-learnmore"
                                 >
                                     Learn More
                                 </a>)
