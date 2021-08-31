@@ -29,7 +29,7 @@ const Connects = () => {
                 overflow="hidden"
                 borderRadius="10px"
             >
-                <StaticImage src="../assets/connect.jpg" quality={100} alt="Connects" placeholder="blurred" />
+                <StaticImage src="../../assets/connect.jpg" quality={100} alt="Connects" placeholder="blurred" />
             </Box>
             <Box
                 width={["100%", "100%", "500px", "500px"]}

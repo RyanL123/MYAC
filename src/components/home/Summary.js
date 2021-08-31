@@ -60,7 +60,7 @@ const Summary = () => {
                 borderRadius="10px"
                 overflow="hidden"
             >
-                <StaticImage src="../assets/summary.jpg" alt="Team" placeholder="blurred" />
+                <StaticImage src="../../assets/summary.jpg" alt="Team" placeholder="blurred" />
             </Box>
         </Box>
     )
