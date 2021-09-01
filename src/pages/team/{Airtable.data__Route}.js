@@ -21,7 +21,7 @@ const TeamMember = (props) => {
             <MotionBox
                 animate={{
                     opacity: 1,
-                    transition: { duration: 0 }
+                    transition: { duration: 0.4 }
                 }}
                 exit={{
                     opacity: 0,
@@ -38,7 +38,7 @@ const TeamMember = (props) => {
                         bio={data.Bio}
                         email={data.Email}
                         ig={data.Instagram_Link}
-                        animOffset={0.5}
+                        animOffset={0.4}
                     />
 
                     <Spacer />
@@ -49,7 +49,7 @@ const TeamMember = (props) => {
                         }}
                         animate={{
                             opacity: 1,
-                            transition: { delay: 0.5, duration: 0.8 }
+                            transition: { delay: 0.5, duration: 0.6 }
                         }}
                     >
                         <Footer />

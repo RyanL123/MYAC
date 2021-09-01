@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Text, Heading, Button } from "@chakra-ui/react"
+import { Box, Text, Heading, Button, Flex } from "@chakra-ui/react"
 import { Link } from "gatsby"
 import igBlack from "../assets/ig-black.svg"
 import { ArrowBackIcon } from "@chakra-ui/icons"
@@ -18,12 +18,11 @@ const About = ({ name, position, bio, img, email, ig, animOffset }) => (
             animate={{
                 x: 0,
                 opacity: 1,
-                transition: { delay: animOffset + 0.8, ...transition }
+                transition: { delay: animOffset + 0.6, ...transition }
             }}
             exit={{
                 x: "-40px",
                 opacity: 0,
-                transition: { duration: 0.4, ...transition }
             }}
         >
             <Link to="/team">
@@ -45,7 +44,7 @@ const About = ({ name, position, bio, img, email, ig, animOffset }) => (
             justifyContent="space-evenly"
             my="50px"
         >
-            <Box>
+            <Flex flexDirection="column" alignItems="center">
                 <MotionBox
                     height="200px"
                     width="200px"
@@ -63,7 +62,7 @@ const About = ({ name, position, bio, img, email, ig, animOffset }) => (
                     animate={{
                         width: '200px',
                         height: "200px",
-                        transition: { delay: animOffset, ...transition },
+                        transition: { delay: animOffset, duration: 0.6, ...transition },
                         opacity: 1
                     }}
 
@@ -71,7 +70,7 @@ const About = ({ name, position, bio, img, email, ig, animOffset }) => (
                         width: "300px",
                         height: "300px",
                         opacity: 0,
-                        transition
+                        transition: { duration: 0.6, ...transition },
                     }}
                 >
                     <GatsbyImage
@@ -88,12 +87,12 @@ const About = ({ name, position, bio, img, email, ig, animOffset }) => (
                     animate={{
                         x: 0,
                         opacity: 1,
-                        transition: { delay: animOffset + 0.6, ...transition }
+                        transition: { delay: animOffset + 0.6, duration: 0.6, ...transition }
                     }}
                     exit={{
                         x: "-50px",
                         opacity: 0,
-                        transition
+                        transition: { duration: 0.6, ...transition }
                     }}
                 >
                     <Heading
@@ -161,7 +160,7 @@ const About = ({ name, position, bio, img, email, ig, animOffset }) => (
                         </Box>
                     </a>
                 </MotionBox>
-            </Box>
+            </Flex>
             <Box
                 maxWidth="800px"
                 mt={["25px", "25px", "0px", "0px"]}
